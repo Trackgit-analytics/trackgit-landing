@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="product-summary">
     <span class="gg-push-chevron-up arrow-up" />
     <div class="content-product-summary">
       <div class="text-content">
@@ -44,17 +44,19 @@ export default class ProductSummary extends Vue {
 
     // scroll trigger animations for border-radius and arrow
     const scrollTriggerConfig = {
-      trigger: "section",
-      start: "top middle",
+      trigger: "#product-summary",
+      start: "top center",
+      end: "top top",
+      endTrigger: "#product-summary",
       scrub: 0.5,
-      toggleActions: "play none none none"
+      toggleActions: "play none none reset"
     };
-    gsap.to("section", {
-      scrollTrigger: scrollTriggerConfig,
+    gsap.to("#product-summary", {
+      scrollTrigger: { ...scrollTriggerConfig, start: "top bottom-=50px" },
       borderRadius: "0px"
     });
     gsap.to(".arrow-up", {
-      scrollTrigger: scrollTriggerConfig,
+      scrollTrigger: { ...scrollTriggerConfig, start: "top bottom-=50px" },
       opacity: 0,
       scale: 0.7
     });
@@ -63,7 +65,9 @@ export default class ProductSummary extends Vue {
     const timeline = gsap.timeline({
       scrollTrigger: {
         ...scrollTriggerConfig,
-        trigger: "content-product-summary",
+        trigger: ".content-product-summary>.text-content",
+        start: "center-=30px bottom",
+        toggleActions: "play none none reset",
         scrub: false
       }
     });
@@ -79,14 +83,14 @@ export default class ProductSummary extends Vue {
       .from(
         ".content-product-summary>.text-content>a",
         textAnimConfig,
-        "-=0.5"
+        "-=0.25"
       );
   }
 }
 </script>
 <style lang="scss" scoped>
 section {
-  margin-top: -20px;
+  margin-top: -30px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   -webkit-box-shadow: 0px -4px 50px 0px rgba(0, 0, 0, 0.3);
@@ -139,13 +143,16 @@ section {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    display: grid;
+    justify-items: center;
 
     .content-product-summary {
       max-width: 90vw;
+      grid-row-start: 2;
 
       .text-content {
         h2 {

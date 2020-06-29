@@ -1,5 +1,5 @@
 <template>
-  <section class="greeting">
+  <section id="user-greeting">
     <Background />
     <div class="content-greeting">
       <h1 class="headline">Supercharge your github with traffic analytics</h1>
@@ -29,15 +29,17 @@ export default class UserGreeting extends Vue {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(".content-greeting", {
       scrollTrigger: {
-        trigger: ".greeting",
+        trigger: "#user-greeting",
         start: "start start",
+        end: "bottom top",
+        endTrigger: "#user-greeting",
         scrub: 0.2,
         pin: true,
         pinSpacing: false,
-        toggleActions: "play pause resume reset"
+        toggleActions: "play none none reset"
       },
       scale: 0.95,
-      opacity: 0.5,
+      opacity: 0.4,
       ease: "none"
     });
   }

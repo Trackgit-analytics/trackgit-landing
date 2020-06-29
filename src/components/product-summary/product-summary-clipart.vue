@@ -77,8 +77,30 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 @Component
-export default class ProductSummaryClipart extends Vue {}
+export default class ProductSummaryClipart extends Vue {
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // scroll trigger animations for clipart
+    const scrollTriggerConfig = {
+      trigger: ".graph-clipart",
+      start: "top bottom",
+      end: "center bottom",
+      endTrigger: ".graph-clipart",
+      scrub: true,
+      toggleActions: "play none none reset"
+    };
+    gsap.from(".graph-clipart", {
+      scrollTrigger: scrollTriggerConfig,
+      opacity: 0,
+      y: 50
+    });
+  }
+}
 </script>
 <style lang="scss" scoped>
 .graph-clipart {
@@ -94,7 +116,10 @@ export default class ProductSummaryClipart extends Vue {}
 
 @media only screen and (max-width: 900px) {
   .graph-clipart {
-    display: none;
+    grid-row-start: 1;
+    padding: 0px;
+    max-width: 80%;
+    margin: 10px 0px;
   }
 }
 </style>
