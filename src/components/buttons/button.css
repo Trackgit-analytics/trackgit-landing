@@ -1,0 +1,12 @@
+.button{
+    height: 30px;
+    padding: 10px 30px;
+    display: inline-flex;
+    align-items: center;
+    text-align: 50px;
+    border-radius: 5px;
+    font-size: 19px;
+    letter-spacing: 0.8px;
+    transition: all 120ms ease;
+    font-weight: 500;
+}
