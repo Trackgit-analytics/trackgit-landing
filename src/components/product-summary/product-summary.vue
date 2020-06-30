@@ -99,13 +99,14 @@ section {
 }
 
 .arrow-up {
-  top: -30px;
+  top: -40px;
   left: calc(50% - 13.2px);
   position: absolute;
   color: white;
   transform: scale(1.2);
   animation-name: arrow-pulse;
-  animation-duration: 1.2s;
+  animation-duration: 0.6s;
+  animation-direction: alternate;
   animation-iteration-count: infinite;
 }
 
@@ -128,14 +129,11 @@ section {
 }
 
 @keyframes arrow-pulse {
-  0% {
+  from {
     margin-top: 0px;
   }
-  50% {
-    margin-top: -5px;
-  }
-  100% {
-    margin-top: 0px;
+  to {
+    margin-top: 10px;
   }
 }
 

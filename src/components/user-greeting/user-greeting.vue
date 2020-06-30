@@ -54,8 +54,20 @@ export default class UserGreeting extends Vue {
 <style scoped>
 section {
   height: 95vh;
-  background-image: linear-gradient(to bottom right, #2086fd, #a134ff);
+  background: linear-gradient(-45deg, #137af0, #a134ff, #3448ff, #a134ff);
+  background-size: 400% 400%;
   padding: 0px;
+  animation: background-animation 10s ease infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .content-greeting {
