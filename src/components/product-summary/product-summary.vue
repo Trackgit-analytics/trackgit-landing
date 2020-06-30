@@ -4,12 +4,12 @@
     <div class="content-product-summary">
       <div class="text-content">
         <h2>
-          Instant analytics
+          Traffic analytics
           <br />for github repositories
         </h2>
         <p>
-          Drop the trackgit token inside your Readme.md and get instant access
-          to user traffic analytics from the
+          Drop the trackgit token inside the repository's Readme.md and get
+          instant access to user traffic analytics from the
           <a :href="linkDashboard">dashboard</a>.
         </p>
         <TransparentButton text="Sign up for free" :action="linkSignup" />
@@ -111,20 +111,16 @@ section {
 
 .content-product-summary {
   max-width: 50vw;
+  min-width: 500px;
 
   .text-content {
+    margin-top: 5px;
+
     h2 {
-      font-size: 3rem;
-      color: #585858;
-      font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 1.3rem;
-      color: #4a4a4a;
-      line-height: 2rem;
-      letter-spacing: 0.5px;
       margin-top: 0px;
       margin-bottom: 45px;
     }
@@ -143,21 +139,19 @@ section {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: grid;
-    justify-items: center;
 
     .content-product-summary {
       max-width: 90vw;
+      min-width: unset;
       grid-row-start: 2;
 
       .text-content {
-        h2 {
-          font-size: 2.3rem;
-        }
+        margin-top: 15px;
       }
     }
   }

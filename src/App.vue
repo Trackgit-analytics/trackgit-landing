@@ -24,9 +24,48 @@ html {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5 {
+  margin: 0px;
+  color: #585858;
+}
+
+h1,
+h2,
+h3 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
+}
+
+h1 {
+  line-height: 4rem;
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+h4,
+p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+
+p {
+  color: #4a4a4a;
 }
 
 a {
@@ -37,7 +76,7 @@ section {
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  padding: 100px 12vw;
+  padding: 175px 12vw 50px 12vw;
   background-color: #f9f8f7;
   display: inline-flex;
   justify-content: center;
@@ -49,9 +88,15 @@ section {
   html {
     font-size: 70%;
   }
+  h2 {
+    font-size: 2.3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
 
   section {
-    padding: 50px 8vw;
+    padding: 100px 8vw 50px 8vw;
   }
 }
 </style>

@@ -2,9 +2,15 @@
   <section id="user-greeting">
     <Background />
     <div class="content-greeting">
-      <h1 class="headline">Supercharge your github with traffic analytics</h1>
-      <TranslucentWhiteButton text="Get started" :action="linkGetStarted" />
-      <h2 class="tagline">Simple . Powerful . Efficient</h2>
+      <h1 class="headline">GitHub traffic analytics</h1>
+      <h4 class="tagline">
+        Supercharge your github repos with traffic insights
+      </h4>
+      <TranslucentWhiteButton
+        class="get-started-button"
+        text="Get started"
+        :action="linkGetStarted"
+      />
     </div>
   </section>
 </template>
@@ -62,23 +68,38 @@ section {
 }
 
 .headline {
-  line-height: 4rem;
-  font-size: 3.5rem;
   max-width: 700px;
-  margin-bottom: 45px;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
 .tagline {
   font-weight: normal;
   font-family: inherit;
   opacity: 0.9;
-  font-size: 1.2rem;
-  margin-top: 45px;
+  color: #eeeeee;
+  margin-bottom: 60px;
 }
 
 @media only screen and (max-width: 600px) {
+  .content-greeting {
+    text-align: left;
+    align-items: flex-start;
+    width: 100vw;
+  }
   .headline {
     max-width: 80%;
+  }
+  .tagline {
+    max-width: 70%;
+    margin-bottom: 15vh;
+  }
+  .headline,
+  .tagline {
+    margin-left: 10vw;
+  }
+  .get-started-button {
+    align-self: center;
   }
 }
 </style>

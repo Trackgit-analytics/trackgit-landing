@@ -114,12 +114,13 @@ export default class ProductSummaryClipart extends Vue {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   .graph-clipart {
     grid-row-start: 1;
     padding: 0px;
     max-width: 80%;
     margin: 10px 0px;
+    justify-self: center;
   }
 }
 </style>
