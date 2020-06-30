@@ -70,6 +70,10 @@ section {
   }
 }
 
+#user-greeting {
+  justify-content: center;
+}
+
 .content-greeting {
   text-align: center;
   display: flex;

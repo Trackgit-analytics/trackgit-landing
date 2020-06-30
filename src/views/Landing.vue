@@ -2,6 +2,7 @@
   <div class="home">
     <UserGreeting />
     <ProductSummary />
+    <SettingUp />
   </div>
 </template>
 
@@ -10,11 +11,13 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import UserGreeting from "@/components/user-greeting/user-greeting.vue";
 import ProductSummary from "@/components/product-summary/product-summary.vue";
+import SettingUp from "@/components/setting-up/setting-up.vue";
 
 @Component({
   components: {
     UserGreeting,
-    ProductSummary
+    ProductSummary,
+    SettingUp
   }
 })
 export default class Landing extends Vue {

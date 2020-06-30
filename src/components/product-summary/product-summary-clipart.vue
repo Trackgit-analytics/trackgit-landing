@@ -123,4 +123,10 @@ export default class ProductSummaryClipart extends Vue {
     justify-self: center;
   }
 }
+
+@media only screen and (max-width: 1000px) and (min-width: 600px) {
+  .graph-clipart {
+    display: none;
+  }
+}
 </style>

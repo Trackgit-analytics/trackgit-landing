@@ -53,7 +53,7 @@ h3 {
 }
 
 h4 {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h4,
@@ -61,11 +61,11 @@ p {
   font-size: 1.3rem;
   line-height: 2rem;
   letter-spacing: 0.5px;
-  font-weight: normal;
 }
 
 p {
   color: #4a4a4a;
+  font-weight: 400;
 }
 
 a {
@@ -76,11 +76,16 @@ section {
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  padding: 175px 12vw 50px 12vw;
+  padding: 175px 12vw 25px 12vw;
   background-color: #f9f8f7;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  margin-top: -5px;
+
+  .main-text-container {
+    max-width: 40vw;
+    min-width: 500px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -96,7 +101,13 @@ section {
   }
 
   section {
-    padding: 100px 8vw 50px 8vw;
+    padding: 80px 8vw 80px 8vw;
+    display: grid;
+
+    .main-text-container {
+      max-width: 90vw;
+      min-width: unset;
+    }
   }
 }
 </style>

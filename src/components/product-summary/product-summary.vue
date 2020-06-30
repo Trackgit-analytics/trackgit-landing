@@ -1,7 +1,7 @@
 <template>
   <section id="product-summary">
     <span class="gg-push-chevron-up arrow-up" />
-    <div class="content-product-summary">
+    <div class="content-product-summary main-text-container">
       <div class="text-content">
         <h2>
           Traffic analytics
@@ -66,7 +66,7 @@ export default class ProductSummary extends Vue {
       scrollTrigger: {
         ...scrollTriggerConfig,
         trigger: ".content-product-summary>.text-content",
-        start: "center-=30px bottom",
+        start: "center-=40px bottom",
         toggleActions: "play none none reset",
         scrub: false
       }
@@ -111,8 +111,7 @@ section {
 }
 
 .content-product-summary {
-  max-width: 50vw;
-  min-width: 500px;
+  grid-row-start: 2;
 
   .text-content {
     margin-top: 5px;
@@ -122,7 +121,6 @@ section {
     }
 
     p {
-      margin-top: 0px;
       margin-bottom: 45px;
     }
   }
@@ -141,15 +139,10 @@ section {
   section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    display: grid;
 
     .content-product-summary {
-      max-width: 90vw;
-      min-width: unset;
-      grid-row-start: 2;
-
       .text-content {
-        margin-top: 15px;
+        margin-top: 35px;
       }
     }
   }

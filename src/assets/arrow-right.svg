@@ -1,0 +1,18 @@
+<svg viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line
+        x1="1.06066"
+        y1="1.93934"
+        x2="8.06066"
+        y2="8.93934"
+        stroke="#505050"
+        stroke-width="3"
+      />
+      <line
+        y1="-1.5"
+        x2="9.8995"
+        y2="-1.5"
+        transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0 13)"
+        stroke="#505050"
+        stroke-width="3"
+      />
+    </svg>
