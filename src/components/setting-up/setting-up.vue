@@ -44,9 +44,8 @@ import Component from "vue-class-component";
 import { Hyperlinks } from "@/models/data/LinkDirectory";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SettingUpClipart from "@/components/setting-up/setting-up-clipart.vue";
 
-@Component({ components: { SettingUpClipart } })
+@Component
 export default class SettingUp extends Vue {
   /** Hyperlink which points to create token page */
   get linkCreateToken(): string {
@@ -129,7 +128,7 @@ export default class SettingUp extends Vue {
 
 @media only screen and (max-width: 600px) {
   #setting-up {
-    padding-top: 470px;
+    padding-top: 0vh;
   }
 }
 </style>

@@ -137,7 +137,7 @@ section {
   section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding-bottom: 200px;
+    padding-bottom: 0px;
 
     .content-product-summary {
       .text-content {

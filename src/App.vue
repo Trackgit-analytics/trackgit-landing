@@ -83,8 +83,7 @@ section {
   margin-top: -5px;
 
   .main-text-container {
-    max-width: 40vw;
-    min-width: 500px;
+    max-width: 500px;
   }
 }
 
