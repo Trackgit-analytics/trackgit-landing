@@ -141,7 +141,7 @@ section {
 
     .content-product-summary {
       .text-content {
-        margin-top: 35px;
+        margin-top: 10px;
       }
     }
   }

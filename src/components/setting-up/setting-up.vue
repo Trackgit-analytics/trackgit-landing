@@ -1,6 +1,9 @@
 <template>
   <section id="setting-up">
     <div class="main-text-container">
+      <h3>
+        Understand your audience better
+      </h3>
       <div class="step step-1">
         <span class="step-picture">
           <img src="@/assets/seed.svg" alt="step 1" />
@@ -64,7 +67,7 @@ export default class SettingUp extends Vue {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#setting-up>.main-text-container",
-        start: "top+=20px bottom",
+        start: "top+=100px bottom",
         toggleActions: "play none none none",
         scrub: false
       }
@@ -87,7 +90,10 @@ export default class SettingUp extends Vue {
 #setting-up {
   .main-text-container {
     display: block;
-    margin-top: 80px;
+
+    h3 {
+      margin-bottom: 3.5rem;
+    }
   }
 
   .down-arrow {
@@ -129,6 +135,10 @@ export default class SettingUp extends Vue {
 @media only screen and (max-width: 600px) {
   #setting-up {
     padding-top: 0vh;
+
+    .main-text-container {
+      margin-top: 80px;
+    }
   }
 }
 </style>

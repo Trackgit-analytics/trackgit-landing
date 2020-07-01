@@ -467,7 +467,7 @@ export default class ProductSummaryClipart extends Vue {
       trigger: "#product-summary>.main-text-container",
       endTrigger: "#setting-up>.main-text-container",
       start: "bottom center",
-      end: `center center+=150px`,
+      end: `center center+=90px`,
       scrub: this.isPhone ? false : true,
       pin: this.isPhone ? undefined : ".graph-clipart",
       toggleActions: "play none none none"
@@ -479,16 +479,20 @@ export default class ProductSummaryClipart extends Vue {
       .to(".graph-clipart", {
         scale: this.isPhone ? 1 : 0.8
       })
-      .to("#animation-svg", {
-        scale: this.isPhone ? 1.3 : 1,
-        transformOrigin: "50% 25%"
-      })
+      .to(
+        "#animation-svg",
+        {
+          scale: this.isPhone ? 1.3 : 1,
+          transformOrigin: "50% 25%"
+        },
+        "-=1"
+      )
       .from(
         "#graph",
         {
           y: -270
         },
-        "-=1"
+        "-=2"
       )
       .to(
         "#graph",
@@ -496,7 +500,7 @@ export default class ProductSummaryClipart extends Vue {
           scale: 0.5,
           transformOrigin: "50% 50%"
         },
-        "-=0.5"
+        this.isPhone ? "-=1" : "-=2"
       )
       .from(
         "#screenshot",
