@@ -468,31 +468,36 @@ export default class ProductSummaryClipart extends Vue {
       endTrigger: "#setting-up>.main-text-container",
       start: "bottom center",
       end: `center center+=90px`,
-      scrub: this.isPhone ? false : true,
+      scrub: this.isPhone ? false : 0.5,
       pin: this.isPhone ? undefined : ".graph-clipart",
       toggleActions: "play none none none"
     };
     const timeline = gsap.timeline({
-      scrollTrigger: scrollTriggerConfig
+      scrollTrigger: scrollTriggerConfig,
+      duration: 1.5
     });
     timeline
-      .to(".graph-clipart", {
-        scale: this.isPhone ? 1 : 0.8
-      })
       .to(
         "#animation-svg",
         {
           scale: this.isPhone ? 1.3 : 1,
           transformOrigin: "50% 25%"
         },
-        "-=1"
+        0
+      )
+      .to(
+        ".graph-clipart",
+        {
+          scale: this.isPhone ? 1 : 0.8
+        },
+        0
       )
       .from(
         "#graph",
         {
           y: -270
         },
-        "-=2"
+        0
       )
       .to(
         "#graph",
@@ -500,14 +505,14 @@ export default class ProductSummaryClipart extends Vue {
           scale: 0.5,
           transformOrigin: "50% 50%"
         },
-        this.isPhone ? "-=1" : "-=2"
+        0
       )
       .from(
         "#screenshot",
         {
           opacity: 0
         },
-        "-=1"
+        0
       )
       .from("#map", {
         opacity: 0,
