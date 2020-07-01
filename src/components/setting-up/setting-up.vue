@@ -1,7 +1,7 @@
 <template>
   <section id="setting-up">
     <div class="main-text-container">
-      <h3>
+      <h3 class="title">
         Understand your audience better
       </h3>
       <div class="step step-1">
@@ -90,10 +90,6 @@ export default class SettingUp extends Vue {
 #setting-up {
   .main-text-container {
     display: block;
-
-    h3 {
-      margin-bottom: 3.5rem;
-    }
   }
 
   .down-arrow {

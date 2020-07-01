@@ -84,6 +84,10 @@ section {
 
   .main-text-container {
     max-width: 500px;
+
+    .title {
+      margin-bottom: 3.5rem;
+    }
   }
 }
 
