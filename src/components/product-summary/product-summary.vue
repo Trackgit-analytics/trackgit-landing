@@ -111,8 +111,6 @@ section {
 }
 
 .content-product-summary {
-  grid-row-start: 2;
-
   .text-content {
     margin-top: 5px;
 
@@ -139,6 +137,7 @@ section {
   section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    padding-bottom: 200px;
 
     .content-product-summary {
       .text-content {

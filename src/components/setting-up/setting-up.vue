@@ -1,8 +1,5 @@
 <template>
   <section id="setting-up">
-    <div class="title">
-      <h3>Understand your audience better</h3>
-    </div>
     <div class="main-text-container">
       <div class="step step-1">
         <span class="step-picture">
@@ -38,6 +35,7 @@
         </p>
       </div>
     </div>
+    <SettingUpClipart />
   </section>
 </template>
 <script lang="ts">
@@ -46,8 +44,9 @@ import Component from "vue-class-component";
 import { Hyperlinks } from "@/models/data/LinkDirectory";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SettingUpClipart from "@/components/setting-up/setting-up-clipart.vue";
 
-@Component
+@Component({ components: { SettingUpClipart } })
 export default class SettingUp extends Vue {
   /** Hyperlink which points to create token page */
   get linkCreateToken(): string {
@@ -66,7 +65,7 @@ export default class SettingUp extends Vue {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#setting-up>.main-text-container",
-        start: "center-=30px bottom",
+        start: "top+=20px bottom",
         toggleActions: "play none none none",
         scrub: false
       }
@@ -87,12 +86,6 @@ export default class SettingUp extends Vue {
 </script>
 <style lang="scss" scoped>
 #setting-up {
-  flex-wrap: wrap;
-
-  .title {
-    text-align: center;
-    flex: 0 0 100%;
-  }
   .main-text-container {
     display: block;
     margin-top: 80px;
@@ -131,6 +124,12 @@ export default class SettingUp extends Vue {
       margin: 0px;
       grid-area: text;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #setting-up {
+    padding-top: 470px;
   }
 }
 </style>
