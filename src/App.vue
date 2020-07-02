@@ -25,9 +25,7 @@ html {
 
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3 {
   margin: 0px;
   color: #585858;
 }
@@ -52,8 +50,11 @@ h3 {
   font-size: 2rem;
 }
 
-h4 {
+h4,
+h5 {
   font-weight: 500;
+  color: #353535;
+  margin: 0px;
 }
 
 h4,
@@ -64,7 +65,7 @@ p {
 }
 
 p {
-  color: #4a4a4a;
+  color: #353535;
   font-weight: 400;
 }
 
@@ -77,7 +78,7 @@ section {
   position: relative;
   box-sizing: border-box;
   padding: 175px 12vw 25px 12vw;
-  background-color: #f9f8f7;
+  background-color: #fff;
   display: inline-flex;
   align-items: center;
   margin-top: -5px;

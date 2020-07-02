@@ -22,6 +22,7 @@
             height="725"
             rx="30"
             fill="#FAFAFA"
+            stroke="#DADADA"
           />
           <rect
             id="Rectangle 21"
