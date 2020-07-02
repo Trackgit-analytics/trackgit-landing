@@ -38,7 +38,6 @@
         </p>
       </div>
     </div>
-    <SettingUpClipart />
   </section>
 </template>
 <script lang="ts">
