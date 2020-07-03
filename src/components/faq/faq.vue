@@ -61,20 +61,32 @@ export default class FAQ extends Vue {
     },
     {
       header: "It’s free!",
-      content: `Our services are free. You can choose to <a href='${Hyperlinks.donate}'>donate</a>, but we don’t intend on charging you a mandatory fee.`,
+      content: `Trackgit is free-to-use. You can choose to <a href='${Hyperlinks.donate}'>donate</a>, but we won't charge you a mandatory service fee.`,
       icon: "heart.svg"
     },
     {
-      header: "Language independent",
+      header: "Universal support",
       content:
-        "It doesn’t matter whether your project is in Node or Ruby, trackgit works on all code repositories.",
-      icon: "code.svg"
+        "It doesn’t matter whether your project is in Node or WordPress, trackgit works with all code platforms.",
+      icon: "universal.svg"
     },
     {
       header: "Easy installation",
       content:
-        "All it takes to get started is adding one line of code to your repository and we’ll take care of the rest.",
+        "Just add one line of code in the Readme.md of your repository and we’ll take care of the rest.",
       icon: "plane.svg"
+    },
+    {
+      header: "Sandboxed state",
+      content:
+        "Trackgit tokens exist within a sandboxed environment and does not interact with your code.",
+      icon: "sandbox.svg"
+    },
+    {
+      header: "No JavaScript",
+      content:
+        "Trackgit tokens don't use JavaScript. JavaScript blockers won't affect the metrics you see.",
+      icon: "coffee.svg"
     },
     {
       header: "Tailor your work",
@@ -87,12 +99,6 @@ export default class FAQ extends Vue {
       content:
         "Use the metrics to decide which of your projects to prioritize and make the most out of your time.",
       icon: "checkbox.svg"
-    },
-    {
-      header: "No JavaScript",
-      content:
-        "We don't use JavaScript for trackers. JavaScript blockers won't affect the metrics you see.",
-      icon: "coffee.svg"
     }
   ];
 
