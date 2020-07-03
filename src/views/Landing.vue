@@ -3,6 +3,7 @@
     <UserGreeting />
     <ProductSummary />
     <SettingUp />
+    <FAQ />
     <section />
     <section />
     <section />
@@ -16,12 +17,14 @@ import Component from "vue-class-component";
 import UserGreeting from "@/components/user-greeting/user-greeting.vue";
 import ProductSummary from "@/components/product-summary/product-summary.vue";
 import SettingUp from "@/components/setting-up/setting-up.vue";
+import FAQ from "@/components/faq/faq.vue";
 
 @Component({
   components: {
     UserGreeting,
     ProductSummary,
-    SettingUp
+    SettingUp,
+    FAQ
   }
 })
 export default class Landing extends Vue {

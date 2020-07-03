@@ -1,5 +1,7 @@
 <template>
-  <a :href="action" class="button translucent-white">{{ this.text }}</a>
+  <a :href="action" class="button no-select translucent-white">{{
+    this.text
+  }}</a>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";

@@ -138,6 +138,7 @@ section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding-bottom: 0px;
+    padding-top: 80px;
 
     .content-product-summary {
       .text-content {

@@ -1,5 +1,5 @@
 <template>
-  <a class="transparent-button" :href="action">
+  <a class="transparent-button no-select" :href="action">
     {{ this.text }}
     <img src="@/assets/arrow-right.svg" alt="arrow" />
   </a>
