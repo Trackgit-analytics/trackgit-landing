@@ -552,10 +552,14 @@ export default class ProductSummaryClipart extends Vue {
         },
         "-=0.3"
       )
-      .from("#doughnut", {
-        opacity: 0,
-        y: 20
-      });
+      .from(
+        "#doughnut",
+        {
+          opacity: 0,
+          y: 20
+        },
+        "-=0.25"
+      );
   }
 }
 </script>

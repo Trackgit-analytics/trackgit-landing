@@ -27,7 +27,7 @@ export default class CircleButton extends Vue {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.03);
   transition: all 100ms ease;
   border-radius: 100%;
   cursor: pointer;

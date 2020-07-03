@@ -3,14 +3,21 @@
     <div class="main-text-container">
       <h3 class="title">Why trackgit?</h3>
       <div class="all-bulletins">
-        <div class="bulletin-container" v-for="item in data" :key="item.order">
+        <div
+          class="bulletin-container"
+          v-for="(item, index) in data"
+          :key="index"
+        >
           <img
             :src="getImageURL(item.icon)"
             :alt="item.header"
             class="bulletin-icon"
           />
           <h4 class="bulletin-header">{{ item.header }}</h4>
-          <p class="bulletin-text">{{ item.content }}</p>
+          <p class="bulletin-text" v-html="item.content" />
+          <span class="bulletin-number">{{
+            `${index + 1}/${data.length}`
+          }}</span>
         </div>
         <div class="bulletin-container bulletin-padding-right" />
         <div class="box-end-fade" />
@@ -41,50 +48,50 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CircleButton from "@/components/buttons/button-circle.vue";
 import DeviceHelper from "@/helpers/DeviceHelper";
+import { Hyperlinks } from "@/models/data/LinkDirectory";
 
 @Component({ components: { CircleButton } })
 export default class FAQ extends Vue {
   data = [
     {
-      order: 1,
       header: "Audience insights",
       content:
-        "Get key insights like number of views, traffic location, visits over time, and more on your repositories.",
+        "Get key insights about your repositories like number of views, traffic location, visits over time, and more.",
       icon: "chart.svg"
     },
     {
-      order: 2,
-      header: "Know your audience",
-      content:
-        "See when and where your visitors are coming from and use it tocater your work to your biggest supporters.",
-      icon: "face.svg"
-    },
-    {
-      order: 3,
-      header: "Know where to priortize",
-      content:
-        "Your time is limited. Use trackgit to understand and decide which projects to prioritize.",
-      icon: "checkbox.svg"
-    },
-    {
-      order: 4,
       header: "It’s free!",
-      content:
-        "Our services are free. Although you can choose to donate, we don’t intend on charging you a mandatory fee.",
+      content: `Our services are free. You can choose to <a href='${Hyperlinks.donate}'>donate</a>, but we don’t intend on charging you a mandatory fee.`,
       icon: "heart.svg"
     },
     {
-      order: 5,
-      header: "Super simple",
+      header: "Language independent",
+      content:
+        "It doesn’t matter whether your project is in Node or Ruby, trackgit works on all code repositories.",
+      icon: "code.svg"
+    },
+    {
+      header: "Easy installation",
       content:
         "All it takes to get started is adding one line of code to your repository and we’ll take care of the rest.",
       icon: "plane.svg"
     },
     {
-      order: 6,
+      header: "Tailor your work",
+      content:
+        "See when and where your visitors are coming from and cater your work to your biggest supporters.",
+      icon: "face.svg"
+    },
+    {
+      header: "Know where to priortize",
+      content:
+        "Use the metrics to decide which of your projects to prioritize and make the most out of your time.",
+      icon: "checkbox.svg"
+    },
+    {
       header: "No JavaScript",
       content:
-        "We don't use JavaScript for trackers. JavaScript blockers won't affect this.",
+        "We don't use JavaScript for trackers. JavaScript blockers won't affect the metrics you see.",
       icon: "coffee.svg"
     }
   ];
@@ -100,9 +107,6 @@ export default class FAQ extends Vue {
   }
 
   mounted() {
-    // sort the data according to the order values
-    this.data.sort((a, b) => a.order - b.order);
-
     // set up scroll spy for bulletin list
     this.bulletinParent = document.querySelectorAll(
       ".main-text-container .all-bulletins"
@@ -112,6 +116,7 @@ export default class FAQ extends Vue {
 
     // create animations for bulletin items
     gsap.registerPlugin(ScrollTrigger);
+
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#faq",
@@ -120,6 +125,7 @@ export default class FAQ extends Vue {
       },
       duration: 1
     });
+
     const elementsToAnimate = Array.from(
       document.getElementsByClassName("bulletin-container")
     );
@@ -156,9 +162,12 @@ export default class FAQ extends Vue {
     const bulletinWidth = document
       .getElementsByClassName("bulletin-container")[0]
       .getBoundingClientRect().width;
-    const scrollFactor = Math.round(
+    let scrollFactor = Math.round(
       this.bulletinParent.getBoundingClientRect().width / bulletinWidth
     );
+    if (scrollFactor > 3) {
+      scrollFactor -= 1;
+    }
     this.bulletinParent.scroll({
       top: 0,
       left:
@@ -213,21 +222,21 @@ export default class FAQ extends Vue {
 }
 
 .bulletin-padding-right {
-  width: 12vw;
-  margin: 0px;
+  width: 12vw !important;
+  margin: 0px !important;
 }
 
 .bulletin-container {
-  width: 300px;
-  padding: 0px 10px 0px 10px;
-  margin-right: 3.3vw;
+  width: calc(300px + 3.3vw);
+  padding: 0px calc(10px + 3.3vw) 0px 10px;
   flex-shrink: 0;
   scroll-snap-align: start;
   box-sizing: border-box;
 
   .bulletin-icon {
-    width: 30px;
+    width: 27px;
     max-height: 30px;
+    opacity: 0.7;
   }
 
   .bulletin-header {
@@ -236,6 +245,19 @@ export default class FAQ extends Vue {
 
   .bulletin-text {
     margin-top: 5px;
+  }
+
+  .bulletin-number {
+    border-radius: 3px;
+    padding: 3px 5px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    margin: 5px 0px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+    display: none;
+    float: right;
   }
 }
 
@@ -256,14 +278,20 @@ export default class FAQ extends Vue {
   .all-bulletins {
     max-width: 100%;
   }
+
   .box-end-fade {
     width: 0px;
   }
+
   .bulletin-container {
     width: 100%;
-    margin-right: 0px;
     padding: 0px 10px;
+
+    .bulletin-number {
+      display: inline-block;
+    }
   }
+
   .button-container {
     float: right;
     margin-top: 10px;
