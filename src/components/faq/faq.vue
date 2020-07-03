@@ -65,6 +65,12 @@ export default class FAQ extends Vue {
       icon: "heart.svg"
     },
     {
+      header: "Your data is safe",
+      content:
+        "All generated data stays strictly within our systems. Our tokens don't collect personally-identifiable data.",
+      icon: "secure.svg"
+    },
+    {
       header: "Universal support",
       content:
         "It doesn’t matter whether your project is in Node or WordPress, trackgit works with all code platforms.",
