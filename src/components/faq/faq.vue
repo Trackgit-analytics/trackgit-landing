@@ -85,26 +85,14 @@ export default class FAQ extends Vue {
     {
       header: "Sandboxed state",
       content:
-        "Trackgit tokens exist within a sandboxed environment and does not interact with your code.",
+        "Our tokens exist within a sandboxed environment and does not interact with your code.",
       icon: "sandbox.svg"
     },
     {
       header: "No JavaScript",
       content:
-        "Trackgit tokens don't use JavaScript. JavaScript blockers won't affect the metrics you see.",
+        "Our tokens don't use JavaScript. JavaScript blockers won't affect the metrics you see.",
       icon: "coffee.svg"
-    },
-    {
-      header: "Tailor your work",
-      content:
-        "See when and where your visitors are coming from and cater your work to your biggest supporters.",
-      icon: "face.svg"
-    },
-    {
-      header: "Know where to priortize",
-      content:
-        "Use the metrics to decide which of your projects to prioritize and make the most out of your time.",
-      icon: "checkbox.svg"
     }
   ];
 
