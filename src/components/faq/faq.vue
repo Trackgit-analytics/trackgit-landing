@@ -129,7 +129,8 @@ export default class FAQ extends Vue {
         start: "center bottom",
         scrub: false
       },
-      duration: 1
+      duration: 1,
+      delay: -0.5
     });
 
     const elementsToAnimate = Array.from(
