@@ -5,7 +5,8 @@
         <h3>Send us a message</h3>
         <p>We're here to help!</p>
       </div>
-      <form>
+
+      <form id="message-form">
         <Textbox
           :required="true"
           placeholder="Rocky Cactus"
@@ -31,6 +32,18 @@
           type="textarea"
           :value.sync="message"
         />
+
+        <RectangleButton
+          text="Send"
+          color="blue"
+          :loading="loading"
+          loadingText="Sending"
+          v-on:click.native="submitForm"
+        />
+
+        <span :class="`${this.success ? 'success' : 'error'} feedback`">
+          {{ this.feedback }}
+        </span>
       </form>
     </div>
   </section>
@@ -39,27 +52,82 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import Textbox from "@/components/base-inputs/text/textbox.vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
+import FormService from "@/services/formSubmit.ts";
+import FormInput from "@/models/enums/formInput.ts";
 
-@Component({ components: { Textbox } })
+@Component({ components: { Textbox, RectangleButton } })
 export default class MessageUs extends Vue {
   name = "";
   email = "";
   message = "";
+  feedback = "";
 
   loading = false;
+  success = true;
+
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // animation for changing sections' background color
+    gsap.to("section", {
+      scrollTrigger: {
+        trigger: "#message-us",
+        start: "top center",
+        scrub: 1
+      },
+      backgroundColor: "#f8f9fa"
+    });
+  }
+
+  /**
+   * Validate and submit form
+   */
+  async submitForm() {
+    const form = document.getElementById("message-form") as HTMLFormElement;
+
+    if (!form.reportValidity()) {
+      // return if form inputs are not valid
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append(FormInput.name, this.name);
+    formData.append(FormInput.email, this.email);
+    formData.append(FormInput.message, this.message);
+
+    this.loading = true;
+    const status = await FormService.submit(formData);
+    this.loading = false;
+
+    if (status === true) {
+      this.success = true;
+      this.feedback = "Message sent";
+
+      // delay helps UI catch up
+      setTimeout(() => {
+        form.reset();
+        this.name = "";
+        this.email = "";
+        this.message = "";
+      }, 50);
+    } else {
+      this.success = false;
+      this.feedback = "Failed to send message";
+    }
+    return false;
+  }
 }
 </script>
 <style lang="scss" scoped>
 .title {
   margin-bottom: 2rem !important;
 }
-.main-text-container {
-  width: 50vw;
-}
-
-@media only screen and (max-width: 600px) {
-  .main-text-container {
-    width: 100%;
-  }
+.feedback {
+  font-weight: 500;
+  float: right;
+  font-size: 1.1rem;
 }
 </style>

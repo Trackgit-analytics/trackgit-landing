@@ -85,6 +85,7 @@ section {
 
   .main-text-container {
     max-width: 500px;
+    width: 50vw;
 
     .title {
       margin-bottom: 3.5rem;
@@ -106,6 +107,48 @@ section {
   -webkit-tap-highlight-color: transparent;
 }
 
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(0, 0, 0);
+
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 0.6s infinite ease-in-out;
+  animation: sk-scaleout 0.6s infinite ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+    opacity: 0.6;
+  }
+}
+
+.error {
+  color: #ff5959;
+}
+
+.success {
+  color: #3fa738;
+}
+
 @media only screen and (max-width: 600px) {
   body,
   html {
@@ -124,7 +167,7 @@ section {
 
     .main-text-container {
       max-width: 84vw;
-      min-width: unset;
+      width: 84vw;
     }
   }
 }

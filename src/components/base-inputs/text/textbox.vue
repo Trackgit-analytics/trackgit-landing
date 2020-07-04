@@ -58,16 +58,16 @@ export default class Textbox extends Vue {
     width: 100%;
     max-width: 100%;
     padding: 1rem;
-    border-radius: 3px;
-    border: 1.5px solid #b4b4b4;
+    border-radius: 5px;
+    border: 1px solid #b4b4b4;
     font-size: 1.1rem;
     transition: 120ms all ease;
     background: #fff;
     box-sizing: border-box;
 
     &:focus {
-      border-color: #a134ff !important;
-      box-shadow: 0 0 2px #a134ff;
+      border-color: #188fff98 !important;
+      box-shadow: 0px 0px 0px 2px #188fff98;
       outline: none;
     }
 
@@ -90,12 +90,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
   background-color: #ffffff !important;
-  -webkit-box-shadow: 0 0 0 1000px white inset !important;
-}
-
-@media only screen and (max-width: 600px) {
-  .textbox-container > .textbox-input {
-    border-width: 1px;
-  }
+  box-shadow: 0 0 0 1000px white inset !important;
 }
 </style>

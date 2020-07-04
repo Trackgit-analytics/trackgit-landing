@@ -1,13 +1,14 @@
 <template>
   <a
-    :href="this.enabled ? action : null"
+    :href="this.isClickable ? this.action : undefined"
     :class="
       `button no-select ${this.color}-button 
-      ${this.enabled ? '' : 'disabled'}`
+      ${this.isClickable ? '' : 'disabled'}`
     "
   >
-    {{ this.text }}
-    <img src="@/assets/arrow-right.svg" alt="arrow" />
+    {{ this.loading ? this.loadingText : this.text }}
+    <img v-if="!this.loading" src="@/assets/arrow-right.svg" alt="arrow" />
+    <div v-else class="spinner" />
   </a>
 </template>
 <script lang="ts">
@@ -19,6 +20,13 @@ export default class RectangleButton extends Vue {
   @Prop() readonly action!: string;
   @Prop() readonly color!: string;
   @Prop({ default: true }) readonly enabled!: boolean;
+  @Prop({ default: false }) readonly loading!: boolean;
+  @Prop({ default: "Loading.." }) readonly loadingText!: string;
+
+  /** Get button's clickable state */
+  get isClickable(): boolean {
+    return this.enabled && !this.loading;
+  }
 }
 </script>
 <style scoped lang="scss">
@@ -27,14 +35,18 @@ export default class RectangleButton extends Vue {
   display: inline-flex;
   align-items: center;
   border-radius: 5px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 0.5px;
   transition: all 120ms ease;
   font-weight: 500;
   text-decoration: none;
+  position: relative;
+  cursor: pointer;
 
-  img {
-    width: 0.6rem;
+  img,
+  .spinner {
+    width: 0.75rem;
+    height: 0.75rem;
     margin-left: 1rem;
   }
 }
@@ -51,7 +63,8 @@ export default class RectangleButton extends Vue {
     background: rgba(255, 255, 255, 0.15);
   }
 
-  img {
+  img,
+  .spinner {
     filter: invert(100);
   }
 }
@@ -72,8 +85,31 @@ export default class RectangleButton extends Vue {
   }
 }
 
-.disabled {
-  opacity: 0.25 !important;
-  cursor: unset !important;
+.blue-button {
+  color: white;
+  background-color: #1890ff;
+
+  &:not(.disabled):hover {
+    background-color: #2e9aff;
+  }
+  &:not(.disabled):active {
+    background-color: #108bff;
+  }
+
+  img,
+  .spinner {
+    filter: invert(100);
+  }
+}
+
+.disabled::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: default;
 }
 </style>

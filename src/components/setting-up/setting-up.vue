@@ -87,10 +87,6 @@ export default class SettingUp extends Vue {
 </script>
 <style lang="scss" scoped>
 #setting-up {
-  .main-text-container {
-    display: block;
-  }
-
   .down-arrow {
     transform: rotate(90deg);
     width: 0.8rem;
