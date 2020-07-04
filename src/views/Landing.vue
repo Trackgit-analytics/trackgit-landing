@@ -4,6 +4,7 @@
     <ProductSummary />
     <SettingUp />
     <FAQ />
+    <MessageUs />
     <section />
     <section />
     <section />
@@ -18,22 +19,39 @@ import UserGreeting from "@/components/user-greeting/user-greeting.vue";
 import ProductSummary from "@/components/product-summary/product-summary.vue";
 import SettingUp from "@/components/setting-up/setting-up.vue";
 import FAQ from "@/components/faq/faq.vue";
+import MessageUs from "@/components/message-us/message-us.vue";
 
 @Component({
   components: {
     UserGreeting,
     ProductSummary,
     SettingUp,
-    FAQ
+    FAQ,
+    MessageUs
   }
 })
 export default class Landing extends Vue {
-  // Initial data can be declared as instance properties
-  message = "Hello!";
+  mounted() {
+    this.fixViewport();
+  }
 
-  // Component methods can be declared as instance methods
-  onClick(): void {
-    window.alert(this.message);
+  /**
+   * Fix the height and width of the viewport.
+   * This ensures that all elements display properly
+   * even when the soft keyboard is being used.
+   */
+  fixViewport() {
+    const viewheight = window.outerHeight;
+    const viewwidth = window.outerWidth;
+    const viewport = document.querySelector("meta[name=viewport]");
+    viewport?.setAttribute(
+      "content",
+      "height=" +
+        viewheight +
+        "px, width=" +
+        viewwidth +
+        "px, initial-scale=1.0"
+    );
   }
 }
 </script>

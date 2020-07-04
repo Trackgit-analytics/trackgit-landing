@@ -587,13 +587,10 @@ export default class ProductSummaryClipart extends Vue {
     margin-top: 20px;
     padding: 0px 0px 0px 0px;
     width: 100%;
-    max-width: unset;
-    max-height: 75vh;
-    height: 75vh;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
     position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     right: 0px;
     top: 0px;
 

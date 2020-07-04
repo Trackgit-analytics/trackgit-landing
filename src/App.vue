@@ -88,6 +88,10 @@ section {
 
     .title {
       margin-bottom: 3.5rem;
+
+      p {
+        margin-top: 6px;
+      }
     }
   }
 }
