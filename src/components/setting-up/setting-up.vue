@@ -94,7 +94,7 @@ export default class SettingUp extends Vue {
   .down-arrow {
     transform: rotate(90deg);
     width: 0.8rem;
-    opacity: 0.4;
+    opacity: 0.2;
     margin: 2.5rem;
     display: block;
   }

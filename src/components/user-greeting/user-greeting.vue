@@ -6,9 +6,10 @@
       <h4 class="tagline">
         Supercharge your github repos with traffic insights
       </h4>
-      <TranslucentWhiteButton
+      <RectangleButton
         class="get-started-button"
         text="Get started"
+        color="translucent-white"
         :action="linkGetStarted"
       />
     </div>
@@ -17,14 +18,14 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import TranslucentWhiteButton from "@/components/buttons/button-translucent-white.vue";
+import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import Background from "@/components/user-greeting/background.vue";
 import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 @Component({
-  components: { TranslucentWhiteButton, Background }
+  components: { RectangleButton, Background }
 })
 export default class UserGreeting extends Vue {
   /** Hyperlink which points to "getting started" page */

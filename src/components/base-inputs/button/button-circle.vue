@@ -1,9 +1,7 @@
 <template>
   <div
     :class="
-      `circle-button-container no-select ${
-        this.enabled ? 'enabled' : 'disabled'
-      }`
+      `circle-button-container no-select ${this.enabled ? '' : 'disabled'}`
     "
   >
     <slot class="icon"></slot>
@@ -18,8 +16,6 @@ export default class CircleButton extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-@import "button.css";
-
 .circle-button-container {
   width: 40px;
   height: 40px;
@@ -32,26 +28,22 @@ export default class CircleButton extends Vue {
   border-radius: 100%;
   cursor: pointer;
 
+  &:not(.disabled):active {
+    background-color: #dfdfdf;
+  }
+
   img {
     max-width: 20px;
     max-height: 20px;
     -webkit-user-select: none;
-    opacity: 0.6;
+    opacity: 0.5;
     margin-right: -3px;
   }
-}
-
-.enabled:active {
-  background-color: #dfdfdf;
 }
 
 .disabled {
   opacity: 0.25 !important;
   cursor: unset !important;
-
-  img {
-    opacity: 0.5;
-  }
 }
 
 @media only screen and (max-width: 600px) {

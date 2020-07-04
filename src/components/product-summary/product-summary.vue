@@ -8,11 +8,15 @@
           <br />for github repositories
         </h2>
         <p>
-          Drop the trackgit token inside the repository's Readme.md and get
+          Add a trackgit token inside your repository's Readme.md and get
           instant access to user traffic analytics from the
           <a :href="linkDashboard">dashboard</a>.
         </p>
-        <TransparentButton text="Sign up for free" :action="linkSignup" />
+        <RectangleButton
+          text="Sign up for free"
+          color="transparent"
+          :action="linkSignup"
+        />
       </div>
     </div>
     <ProductSummaryClipart />
@@ -25,9 +29,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import ProductSummaryClipart from "@/components/product-summary/product-summary-clipart.vue";
-import TransparentButton from "@/components/buttons/button-transparent.vue";
+import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 
-@Component({ components: { ProductSummaryClipart, TransparentButton } })
+@Component({ components: { ProductSummaryClipart, RectangleButton } })
 export default class ProductSummary extends Vue {
   /** Hyperlink which points to dashboard page */
   get linkDashboard(): string {
