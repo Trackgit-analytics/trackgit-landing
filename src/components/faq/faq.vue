@@ -73,7 +73,7 @@ export default class FAQ extends Vue {
     {
       header: "Universal support",
       content:
-        "It doesn’t matter whether your project is in Node or WordPress, trackgit works with all code platforms.",
+        "It doesn’t matter whether your project is in Node or Ruby, trackgit works with all online repositories.",
       icon: "universal.svg"
     },
     {
