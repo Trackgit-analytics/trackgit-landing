@@ -4,7 +4,8 @@
 enum FormInput {
   name = "name",
   email = "email",
-  message = "message"
+  message = "message",
+  type = "type"
 }
 
 export default FormInput;

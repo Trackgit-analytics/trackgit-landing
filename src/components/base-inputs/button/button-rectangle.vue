@@ -42,6 +42,7 @@ export default class RectangleButton extends Vue {
   text-decoration: none;
   position: relative;
   cursor: pointer;
+  height: fit-content;
 
   img,
   .spinner {

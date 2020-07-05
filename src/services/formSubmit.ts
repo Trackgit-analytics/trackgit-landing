@@ -1,5 +1,5 @@
 import axios from "axios";
-import url from "@/models/data/GetForm.ts";
+import { url } from "@/models/data/GetForm.ts";
 
 export default class FormService {
   /**

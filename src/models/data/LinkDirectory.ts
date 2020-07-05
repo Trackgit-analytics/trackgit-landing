@@ -1,5 +1,5 @@
 /**
- * All hyperlinks in the project
+ * All hyperlinks used in the project
  */
 export const Hyperlinks = {
   home: "",
@@ -7,5 +7,14 @@ export const Hyperlinks = {
   dashboard: "https://dashboard.trackgit.com/",
   signup: "https://dashboard.trackgit.com/",
   createToken: "https://dashboard.trackgit.com/",
-  donate: "./donate"
+  donate: "./donate",
+  shanzid: "https://shanzid.com"
+};
+
+/**
+ * All email addresses used in the project
+ */
+export const Emails = {
+  help: "support@trackgit.com",
+  join: "joinus@trackgit.com"
 };

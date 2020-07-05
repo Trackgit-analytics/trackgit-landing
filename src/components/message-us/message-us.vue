@@ -59,6 +59,7 @@ import RectangleButton from "@/components/base-inputs/button/button-rectangle.vu
 import FormService from "@/services/formSubmit.ts";
 import FormInput from "@/models/enums/formInput.ts";
 import MessageUsClipart from "@/components/message-us/message-us-clipart.vue";
+import { FormType } from "@/models/data/GetForm.ts";
 
 @Component({ components: { Textbox, RectangleButton, MessageUsClipart } })
 export default class MessageUs extends Vue {
@@ -96,6 +97,7 @@ export default class MessageUs extends Vue {
     }
 
     const formData = new FormData();
+    formData.append(FormInput.type, FormType.message);
     formData.append(FormInput.name, this.name);
     formData.append(FormInput.email, this.email);
     formData.append(FormInput.message, this.message);

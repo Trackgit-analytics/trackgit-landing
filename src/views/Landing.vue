@@ -6,10 +6,7 @@
     <FAQ />
     <MessageUs />
     <DonatePrompt />
-    <section />
-    <section />
-    <section />
-    <section />
+    <Footer />
   </div>
 </template>
 
@@ -22,6 +19,7 @@ import SettingUp from "@/components/setting-up/setting-up.vue";
 import FAQ from "@/components/faq/faq.vue";
 import MessageUs from "@/components/message-us/message-us.vue";
 import DonatePrompt from "@/components/donate/donate.vue";
+import Footer from "@/components/footer/footer.vue";
 
 @Component({
   components: {
@@ -30,7 +28,8 @@ import DonatePrompt from "@/components/donate/donate.vue";
     SettingUp,
     FAQ,
     MessageUs,
-    DonatePrompt
+    DonatePrompt,
+    Footer
   }
 })
 export default class Landing extends Vue {
