@@ -151,7 +151,7 @@ nav {
     margin-left: auto;
     display: none;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.85rem;
   }
 }
 
