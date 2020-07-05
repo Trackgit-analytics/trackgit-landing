@@ -102,6 +102,23 @@ export default class RectangleButton extends Vue {
   }
 }
 
+.purple-button {
+  color: white;
+  background-color: #7a5bf5;
+
+  &:not(.disabled):hover {
+    background-color: #8568f7;
+  }
+  &:not(.disabled):active {
+    background-color: #6946f7;
+  }
+
+  img,
+  .spinner {
+    filter: invert(100);
+  }
+}
+
 .disabled::before {
   content: "";
   position: absolute;

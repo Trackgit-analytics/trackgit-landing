@@ -5,6 +5,7 @@
     <SettingUp />
     <FAQ />
     <MessageUs />
+    <DonatePrompt />
     <section />
     <section />
     <section />
@@ -20,6 +21,7 @@ import ProductSummary from "@/components/product-summary/product-summary.vue";
 import SettingUp from "@/components/setting-up/setting-up.vue";
 import FAQ from "@/components/faq/faq.vue";
 import MessageUs from "@/components/message-us/message-us.vue";
+import DonatePrompt from "@/components/donate/donate.vue";
 
 @Component({
   components: {
@@ -27,7 +29,8 @@ import MessageUs from "@/components/message-us/message-us.vue";
     ProductSummary,
     SettingUp,
     FAQ,
-    MessageUs
+    MessageUs,
+    DonatePrompt
   }
 })
 export default class Landing extends Vue {

@@ -79,15 +79,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
 import DeviceHelper from "@/helpers/DeviceHelper.ts";
 
-@Component()
+@Component
 export default class MessageUsClipart extends Vue {
   /** Returns true if the device is a desktop */
-  get isDesktop() {
+  get isDesktop(): boolean {
     return !(DeviceHelper.isTablet() || DeviceHelper.isPhone());
   }
 }
