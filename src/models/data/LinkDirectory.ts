@@ -7,6 +7,7 @@ export const Hyperlinks = {
   dashboard: "https://dashboard.trackgit.com/",
   signup: "https://dashboard.trackgit.com/",
   createToken: "https://dashboard.trackgit.com/",
+  tos: "https://trackgit.com/terms",
   donate: "./donate",
   shanzid: "https://shanzid.com"
 };

@@ -224,4 +224,14 @@ export default class DonateClipart extends Vue {}
     }
   }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .donate-clipart {
+    padding-left: 10px;
+
+    svg {
+      max-width: 30vw;
+    }
+  }
+}
 </style>

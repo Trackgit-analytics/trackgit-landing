@@ -162,7 +162,7 @@ section {
   }
 
   section {
-    padding: 60px 8vw 80px 8vw;
+    padding: 50px 8vw 80px 8vw;
     display: grid;
 
     .main-text-container {
