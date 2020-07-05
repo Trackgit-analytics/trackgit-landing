@@ -11,6 +11,7 @@ html {
   margin: 0px;
   padding: 0px;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 * {

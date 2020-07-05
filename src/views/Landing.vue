@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Navbar />
     <UserGreeting />
     <ProductSummary />
     <SettingUp />
@@ -13,6 +14,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import Navbar from "@/components/navbar/navbar.vue";
 import UserGreeting from "@/components/user-greeting/user-greeting.vue";
 import ProductSummary from "@/components/product-summary/product-summary.vue";
 import SettingUp from "@/components/setting-up/setting-up.vue";
@@ -23,6 +25,7 @@ import Footer from "@/components/footer/footer.vue";
 
 @Component({
   components: {
+    Navbar,
     UserGreeting,
     ProductSummary,
     SettingUp,

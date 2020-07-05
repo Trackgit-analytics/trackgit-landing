@@ -108,7 +108,7 @@ export default class MessageUs extends Vue {
 
     if (status === true) {
       this.success = true;
-      this.feedback = "Message sent";
+      this.feedback = "Your message was sent!";
 
       // delay helps UI catch up
       setTimeout(() => {

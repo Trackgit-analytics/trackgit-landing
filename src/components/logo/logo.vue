@@ -16,10 +16,14 @@ export default class Logo extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.logo > a {
+.logo {
   font-size: 2.5rem;
-  font-weight: 500;
-  font-family: "Josefin Sans", sans-serif;
-  text-decoration: none;
+  transition: all 120ms ease;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    font-family: "Josefin Sans", sans-serif;
+  }
 }
 </style>

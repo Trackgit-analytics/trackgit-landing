@@ -35,7 +35,7 @@ export default class RectangleButton extends Vue {
   display: inline-flex;
   align-items: center;
   border-radius: 5px;
-  font-size: 1.25rem;
+  font-size: 1.7em;
   letter-spacing: 0.5px;
   transition: all 120ms ease;
   font-weight: 500;
