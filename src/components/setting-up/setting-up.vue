@@ -2,7 +2,7 @@
   <section id="setting-up">
     <div class="main-text-container">
       <h3 class="title">
-        Understand your audience better
+        Three easy steps
       </h3>
       <div class="step step-1">
         <span class="step-picture">

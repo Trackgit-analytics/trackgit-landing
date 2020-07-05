@@ -53,7 +53,7 @@ h3 {
 h4,
 h5 {
   font-weight: 500;
-  color: #353535;
+  color: #464646;
   margin: 0px;
 }
 
@@ -61,11 +61,11 @@ h4,
 p {
   font-size: 1.3rem;
   line-height: 2rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1px;
 }
 
 p {
-  color: #353535;
+  color: #464646;
   font-weight: 400;
 }
 
@@ -152,7 +152,7 @@ section {
 @media only screen and (max-width: 600px) {
   body,
   html {
-    font-size: 70%;
+    font-size: 75%;
   }
   h2 {
     font-size: 2.3rem;

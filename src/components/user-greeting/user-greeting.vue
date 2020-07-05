@@ -59,7 +59,7 @@ section {
   background-size: 400% 400%;
   padding: 0px;
   animation: background-animation 10s ease infinite;
-  animation-direction: alternate-reverse;
+  animation-direction: alternate;
 }
 
 @keyframes background-animation {
@@ -94,7 +94,7 @@ section {
   font-weight: normal;
   font-family: inherit;
   opacity: 0.9;
-  color: #eeeeee;
+  color: #f3f3f3;
   margin-bottom: 60px;
 }
 

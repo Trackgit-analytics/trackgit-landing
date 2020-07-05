@@ -31,11 +31,11 @@ export default class RectangleButton extends Vue {
 </script>
 <style scoped lang="scss">
 .button {
-  padding: 15px 25px 15px 30px;
+  padding: 1rem 1.5rem 1rem 1.8rem;
   display: inline-flex;
   align-items: center;
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   letter-spacing: 0.5px;
   transition: all 120ms ease;
   font-weight: 500;
