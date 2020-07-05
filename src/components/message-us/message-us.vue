@@ -46,6 +46,7 @@
         </span>
       </form>
     </div>
+    <MessageUsClipart />
   </section>
 </template>
 <script lang="ts">
@@ -57,8 +58,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import FormService from "@/services/formSubmit.ts";
 import FormInput from "@/models/enums/formInput.ts";
+import MessageUsClipart from "@/components/message-us/message-us-clipart.vue";
 
-@Component({ components: { Textbox, RectangleButton } })
+@Component({ components: { Textbox, RectangleButton, MessageUsClipart } })
 export default class MessageUs extends Vue {
   name = "";
   email = "";
