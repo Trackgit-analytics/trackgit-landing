@@ -47,8 +47,8 @@ import Component from "vue-class-component";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CircleButton from "@/components/base-inputs/button/button-circle.vue";
-import DeviceHelper from "@/helpers/DeviceHelper";
-import { Hyperlinks } from "@/models/data/LinkDirectory";
+import DeviceHelper from "@/helpers/DeviceHelper.ts";
+import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
 
 @Component({ components: { CircleButton } })
 export default class FAQ extends Vue {

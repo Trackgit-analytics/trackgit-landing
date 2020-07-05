@@ -43,7 +43,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Hyperlinks } from "@/models/data/LinkDirectory";
+import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

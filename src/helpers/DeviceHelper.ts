@@ -3,7 +3,7 @@ export default class DeviceHelper {
    * @returns true if the device is a phone
    */
   public static isPhone(): boolean {
-    const width = window.screen.width;
+    const width = this.getWidth();
     if (width <= 600) {
       return true;
     }
@@ -14,7 +14,7 @@ export default class DeviceHelper {
    * @returns true if the device is a tablet
    */
   public static isTablet(): boolean {
-    const width = window.screen.width;
+    const width = this.getWidth();
     if (width >= 600 && width <= 1024) {
       return true;
     }

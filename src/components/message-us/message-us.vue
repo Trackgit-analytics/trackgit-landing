@@ -3,7 +3,7 @@
     <div class="main-text-container">
       <div class="title">
         <h3>Send us a message</h3>
-        <p>We're here to help!</p>
+        <p>We love to hear from you!</p>
       </div>
 
       <form id="message-form">
