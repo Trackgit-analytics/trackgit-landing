@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-  deploy:
+  deploy-frontend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -18,5 +18,21 @@ jobs:
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}no
+
+  deploy-server:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: 10
+      - run: npm install
+      - run: npm run build
+      - run: firebase functions:config:set stripe.key=$STRIPE_KEY stripe.id="Trackgit Stripe key"
+      - uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
