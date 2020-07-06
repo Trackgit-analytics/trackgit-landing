@@ -15,6 +15,17 @@ export const Hyperlinks = {
 };
 
 /**
+ * All API endpoints used
+ */
+export const API = {
+  /** Endpoint to project's firebase cloud functions */
+  baseURL: "https://us-central1-trackgit-analytics.cloudfunctions.net/",
+  /** Endpoint to get user's local preferences */
+  userLocale:
+    "https://api.ipdata.co/currency?api-key=6865651ab2ddad0e2c07f4405277d8547e6ab89a5a7de3e98248febb"
+};
+
+/**
  * All email addresses used in the project
  */
 export const Emails = {
