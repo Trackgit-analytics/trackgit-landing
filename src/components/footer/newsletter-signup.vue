@@ -74,7 +74,7 @@ export default class NewsletterSignup extends Vue {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 2rem 0px 0px 3rem;
+  padding: 2rem 3rem 0px 3rem;
   width: 100vw;
   box-sizing: border-box;
 

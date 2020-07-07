@@ -6,6 +6,7 @@
       <a :href="dashboardLink">Dashboard</a>
       <a :href="loginLink">Log in</a>
       <a :href="signupLink">Register</a>
+      <a :href="donateLink">Donate</a>
       <a :href="contactLink">Contact us</a>
     </div>
 
@@ -54,6 +55,11 @@ export default class Navbar extends Vue {
   /** Link to message section */
   get contactLink(): string {
     return Hyperlinks.contactUs;
+  }
+
+  /** Link to donate page */
+  get donateLink(): string {
+    return Hyperlinks.donate;
   }
 
   /** Returns true if the device is a phone */
@@ -165,7 +171,6 @@ nav {
 
     .get-started-button {
       font-size: 0.8rem;
-      align-self: flex-end;
     }
   }
 }
@@ -173,6 +178,8 @@ nav {
 @media only screen and (max-width: 900px) and (min-width: 600px) {
   nav {
     font-size: 0.95rem;
+    padding: 1.5vh 8vw !important;
+
     .links > a {
       margin: 0px;
     }
