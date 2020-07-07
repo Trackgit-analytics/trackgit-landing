@@ -11,7 +11,8 @@ const routes: Array<RouteConfig> = [
     component: Landing
   },
   {
-    path: "/donate",
+    path: "/donate/:receipt?",
+    props: true,
     name: "donate",
     component: () => import("@/views/Donate.vue")
   },

@@ -35,30 +35,7 @@ import Footer from "@/components/footer/footer.vue";
     Footer
   }
 })
-export default class Landing extends Vue {
-  mounted() {
-    this.fixViewport();
-  }
-
-  /**
-   * Fix the height and width of the viewport.
-   * This ensures that all elements display properly
-   * even when the soft keyboard is being used.
-   */
-  fixViewport() {
-    const viewheight = window.outerHeight;
-    const viewwidth = window.outerWidth;
-    const viewport = document.querySelector("meta[name=viewport]");
-    viewport?.setAttribute(
-      "content",
-      "height=" +
-        viewheight +
-        "px, width=" +
-        viewwidth +
-        "px, initial-scale=1.0"
-    );
-  }
-}
+export default class Landing extends Vue {}
 </script>
 <style lang="scss" scoped>
 .home {

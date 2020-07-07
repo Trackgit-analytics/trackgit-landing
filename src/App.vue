@@ -3,7 +3,35 @@
     <router-view />
   </div>
 </template>
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+@Component
+export default class App extends Vue {
+  mounted() {
+    this.fixViewport();
+  }
 
+  /**
+   * Fix the height and width of the viewport.
+   * This ensures that all elements display properly
+   * even when the soft keyboard is being used.
+   */
+  fixViewport() {
+    const viewheight = window.outerHeight;
+    const viewwidth = window.outerWidth;
+    const viewport = document.querySelector("meta[name=viewport]");
+    viewport?.setAttribute(
+      "content",
+      "height=" +
+        viewheight +
+        "px, width=" +
+        viewwidth +
+        "px, initial-scale=1.0"
+    );
+  }
+}
+</script>
 <style lang="scss">
 @import url("./assets/icons.css");
 body,

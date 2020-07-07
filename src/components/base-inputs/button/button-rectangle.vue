@@ -120,6 +120,37 @@ export default class RectangleButton extends Vue {
   }
 }
 
+.purple-border-button {
+  border: 1px solid #7a5bf5;
+  color: #7a5bf5;
+  background-color: transparent;
+
+  &:not(.disabled):hover {
+    background-color: #8568f7;
+    color: white;
+
+    img,
+    .spinner {
+      filter: invert(100);
+    }
+  }
+  &:not(.disabled):active {
+    background-color: #6946f7;
+    color: white;
+
+    img,
+    .spinner {
+      filter: invert(100);
+    }
+  }
+
+  img,
+  .spinner {
+    filter: invert(38%) sepia(63%) saturate(4007%) hue-rotate(236deg)
+      brightness(100%) contrast(93%);
+  }
+}
+
 .disabled::before {
   content: "";
   position: absolute;

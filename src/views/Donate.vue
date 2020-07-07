@@ -50,7 +50,7 @@
       </div>
       <RectangleButton
         text="Proceed to payment"
-        color="purple"
+        color="purple-border"
         :loading="loading"
         loadingText="Redirecting to secure gateway"
         v-on:click.native="proceedToPayment"
@@ -60,8 +60,7 @@
   </section>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Prop, Vue } from "vue-property-decorator";
 import Navbar from "@/components/navbar/navbar.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import Currencies from "@/models/data/Currencies";
@@ -76,6 +75,8 @@ import StripeConfig from "@/models/data/Stripe.ts";
 
 @Component({ components: { Navbar, RectangleButton } })
 export default class DonationPage extends Vue {
+  @Prop() readonly receipt!: string;
+
   currency = "cad";
   amount = 5;
 
@@ -161,13 +162,14 @@ export default class DonationPage extends Vue {
   height: calc(100vh - 4.25rem);
 
   .left-section {
-    width: 50vw;
+    background-color: white;
+    width: 60vw;
     box-sizing: border-box;
     height: 100%;
     -webkit-box-shadow: 21px 0px 43px -19px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 21px 0px 43px -19px rgba(0, 0, 0, 0.25);
     box-shadow: 21px 0px 43px -19px rgba(0, 0, 0, 0.25);
-    padding: 8vh 8vw;
+    padding: 8vh 12vw;
   }
 
   .right-section {
@@ -205,9 +207,10 @@ export default class DonationPage extends Vue {
     border: 1px solid rgba(0, 0, 0, 0.1);
 
     .currency {
-      margin-left: 5px;
+      margin-left: 7px;
       color: rgba(0, 0, 0, 0.4);
       font-weight: 500;
+      font-size: 1.1rem;
     }
 
     &:before {
@@ -282,6 +285,7 @@ export default class DonationPage extends Vue {
   #donation {
     .left-section {
       width: 100vw;
+      padding: 8vh 8vw;
       box-shadow: none;
     }
 
