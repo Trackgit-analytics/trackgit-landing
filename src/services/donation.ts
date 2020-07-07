@@ -1,5 +1,6 @@
-import { Checkout } from "@/models/interfaces/checkout.ts";
+import Checkout from "@/models/interfaces/checkout.ts";
 import baseService from "@/services/baseService.ts";
+import { RedirectToCheckoutOptions } from "@stripe/stripe-js";
 
 export default class DonationService {
   /**
@@ -7,10 +8,12 @@ export default class DonationService {
    * @param data The checkout data
    * @returns A stripe sessionID, or null if error occurred
    */
-  public static async createCheckout(data: Checkout): Promise<Session | null> {
+  public static async createCheckout(
+    data: Checkout
+  ): Promise<RedirectToCheckoutOptions | null> {
     const response = await this.callDonationAPI(data);
 
-    return response?.data as Session;
+    return response?.data;
   }
 
   /**

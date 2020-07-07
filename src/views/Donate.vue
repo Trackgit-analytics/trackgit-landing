@@ -51,8 +51,9 @@
       <RectangleButton
         text="Proceed to payment"
         color="purple"
-        :loading="false"
+        :loading="loading"
         loadingText="Redirecting to secure gateway"
+        v-on:click.native="proceedToPayment"
       />
     </div>
     <div class="right-section"></div>
@@ -63,11 +64,90 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import Navbar from "@/components/navbar/navbar.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
+import Currencies from "@/models/data/Currencies";
+import Checkout from "@/models/interfaces/checkout";
+import DonationService from "@/services/donation";
+import {
+  loadStripe,
+  Stripe,
+  RedirectToCheckoutOptions
+} from "@stripe/stripe-js";
+import StripeConfig from "@/models/data/Stripe.ts";
 
 @Component({ components: { Navbar, RectangleButton } })
 export default class DonationPage extends Vue {
   currency = "cad";
   amount = 5;
+
+  loading = false;
+  stripe: Stripe | null = null;
+  serverUp = false;
+
+  mounted() {
+    this.initStripe().then(() => {
+      this.wakeServer();
+    });
+  }
+
+  /** Wakes server up, in case it's asleep */
+  async wakeServer() {
+    this.serverUp = await DonationService.wakeServer();
+  }
+
+  /** Initializes Stripe API */
+  async initStripe() {
+    this.stripe = await loadStripe(StripeConfig.publicKey);
+  }
+
+  /** Triggered when user clicks the proceed button */
+  async proceedToPayment() {
+    if (this.areInputsValid() === true) {
+      this.loading = true;
+      const session = await this.createCheckoutSession();
+      if (session == null || this.stripe == null) {
+        this.loading = false;
+        return;
+      }
+      this.stripe.redirectToCheckout(session);
+    }
+  }
+
+  /** Checks whether the given inputs are valid or not*/
+  areInputsValid(): boolean {
+    if (this.amount == null || Number.isNaN(Number(this.amount))) {
+      alert("Please select a valid amount");
+      return false;
+    }
+
+    if (this.currency == null) {
+      alert("Please choose a valid currency");
+      return false;
+    }
+
+    const acceptedCurrencies = Currencies.map(e => e.code.toLowerCase());
+    if (!acceptedCurrencies.includes(this.currency.toLowerCase())) {
+      alert(`${this.currency} is not an accepted currency`);
+      return false;
+    }
+    return true;
+  }
+
+  /** Creates a stripe checkout session
+   * @returns The session ID to be used
+   */
+  async createCheckoutSession(): Promise<RedirectToCheckoutOptions | null> {
+    const checkout: Checkout = {
+      currency: this.currency,
+      amount: this.amount
+    };
+    const session = await DonationService.createCheckout(checkout);
+    if (session != null) {
+      return session;
+    } else {
+      alert("Could not process your request. Please try again.");
+      return null;
+    }
+  }
 }
 </script>
 
@@ -85,7 +165,7 @@ export default class DonationPage extends Vue {
     -webkit-box-shadow: 21px 0px 43px -19px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 21px 0px 43px -19px rgba(0, 0, 0, 0.25);
     box-shadow: 21px 0px 43px -19px rgba(0, 0, 0, 0.25);
-    padding: 8vw;
+    padding: 8vh 8vw;
   }
 
   .right-section {
