@@ -91,7 +91,9 @@ export default class DonationPage extends Vue {
 
   /** Wakes server up, in case it's asleep */
   async wakeServer() {
-    this.serverUp = await DonationService.wakeServer();
+    /** Uncomment if the firebase servers sleep from inactivity */
+    // this.serverUp = await DonationService.wakeServer();
+    this.serverUp = true;
   }
 
   /** Initializes Stripe API */
