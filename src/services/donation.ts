@@ -1,6 +1,6 @@
-import Checkout from "@/models/interfaces/Checkout";
 import baseService from "@/services/baseService.ts";
 import { RedirectToCheckoutOptions } from "@stripe/stripe-js";
+import Checkout from "@/models/interfaces/checkout";
 
 export default class DonationService {
   /**

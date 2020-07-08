@@ -1,6 +1,7 @@
 import { API } from "@/models/data/LinkDirectory.ts";
 import Currencies, { defaultCurrency } from "@/models/data/Currencies.ts";
 import axios from "axios";
+import Currency from "@/models/interfaces/currency";
 
 export default class UserLocaleService {
   /**

@@ -4,3 +4,4 @@ interface Currency {
   /** Three-letter currency code */
   code: string;
 }
+export default Currency;

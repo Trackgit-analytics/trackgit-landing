@@ -87,7 +87,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import Navbar from "@/components/navbar/navbar.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import Currencies from "@/models/data/Currencies.ts";
-import Checkout from "@/models/interfaces/Checkout";
 import DonationService from "@/services/donation.ts";
 import {
   loadStripe,
@@ -96,6 +95,7 @@ import {
 } from "@stripe/stripe-js";
 import StripeConfig from "@/models/data/Stripe.ts";
 import Modal from "@/components/base-inputs/modal/modal.vue";
+import Checkout from "@/models/interfaces/checkout";
 
 @Component({ components: { Navbar, RectangleButton, Modal } })
 export default class DonationPage extends Vue {
