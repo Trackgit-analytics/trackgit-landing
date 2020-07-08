@@ -88,7 +88,7 @@ import DeviceHelper from "@/helpers/DeviceHelper.ts";
 export default class MessageUsClipart extends Vue {
   /** Returns true if the device is a desktop */
   get isDesktop(): boolean {
-    return !(DeviceHelper.isTablet() || DeviceHelper.isPhone());
+    return DeviceHelper.isDesktop();
   }
 }
 </script>

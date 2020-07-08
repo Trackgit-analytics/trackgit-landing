@@ -56,7 +56,6 @@
         v-on:click.native="proceedToPayment"
       />
     </div>
-    <div class="right-section"></div>
 
     <Modal title="Payment successful" :visible.sync="showReceiptModal">
       <div class="modal-content">
@@ -224,11 +223,6 @@ export default class DonationPage extends Vue {
     padding: 8vh 12vw;
   }
 
-  .right-section {
-    width: 50vw;
-    height: 100%;
-  }
-
   .amount-options {
     max-width: 100%;
     margin: 5vh 0px 7vh 0px;
@@ -374,10 +368,6 @@ export default class DonationPage extends Vue {
       width: 100vw;
       padding: 8vh 8vw;
       box-shadow: none;
-    }
-
-    .right-section {
-      display: none;
     }
   }
 
