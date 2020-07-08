@@ -18,8 +18,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Vue } from "vue-property-decorator";
 import Textbox from "@/components/base-inputs/text/textbox.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import FormInput from "@/models/enums/formInput";

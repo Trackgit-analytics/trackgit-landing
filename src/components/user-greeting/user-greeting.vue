@@ -16,8 +16,7 @@
   </section>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Vue } from "vue-property-decorator";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import Background from "@/components/user-greeting/background.vue";
 import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
