@@ -87,7 +87,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import Navbar from "@/components/navbar/navbar.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import Currencies from "@/models/data/Currencies.ts";
-import Checkout from "@/models/interfaces/Checkout.ts";
+import Checkout from "@/models/interfaces/Checkout";
 import DonationService from "@/services/donation.ts";
 import {
   loadStripe,
