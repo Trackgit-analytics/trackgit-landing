@@ -1,33 +1,36 @@
 <template>
-  <section>
+  <section id="product-summary">
     <span class="gg-push-chevron-up arrow-up" />
-    <div class="content-product-summary">
+    <div class="content-product-summary main-text-container">
       <div class="text-content">
         <h2>
-          Instant analytics
+          Traffic analytics
           <br />for github repositories
         </h2>
         <p>
-          Drop the trackgit token inside your Readme.md and get instant access
-          to user traffic analytics from the
+          Add a trackgit token inside your repository's Readme.md and get
+          instant access to user traffic analytics from the
           <a :href="linkDashboard">dashboard</a>.
         </p>
-        <TransparentButton text="Sign up for free" :action="linkSignup" />
+        <RectangleButton
+          text="Sign up for free"
+          color="transparent"
+          :action="linkSignup"
+        />
       </div>
     </div>
     <ProductSummaryClipart />
   </section>
 </template>
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Vue } from "vue-property-decorator";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import ProductSummaryClipart from "@/components/product-summary/product-summary-clipart.vue";
-import TransparentButton from "@/components/buttons/button-transparent.vue";
+import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 
-@Component({ components: { ProductSummaryClipart, TransparentButton } })
+@Component({ components: { ProductSummaryClipart, RectangleButton } })
 export default class ProductSummary extends Vue {
   /** Hyperlink which points to dashboard page */
   get linkDashboard(): string {
@@ -44,17 +47,19 @@ export default class ProductSummary extends Vue {
 
     // scroll trigger animations for border-radius and arrow
     const scrollTriggerConfig = {
-      trigger: "section",
-      start: "top middle",
+      trigger: "#product-summary",
+      start: "top center",
+      end: "top top",
+      endTrigger: "#product-summary",
       scrub: 0.5,
-      toggleActions: "play none none none"
+      toggleActions: "play none none reset"
     };
-    gsap.to("section", {
-      scrollTrigger: scrollTriggerConfig,
+    gsap.to("#product-summary", {
+      scrollTrigger: { ...scrollTriggerConfig, start: "top bottom-=50px" },
       borderRadius: "0px"
     });
     gsap.to(".arrow-up", {
-      scrollTrigger: scrollTriggerConfig,
+      scrollTrigger: { ...scrollTriggerConfig, start: "top bottom-=50px" },
       opacity: 0,
       scale: 0.7
     });
@@ -63,7 +68,9 @@ export default class ProductSummary extends Vue {
     const timeline = gsap.timeline({
       scrollTrigger: {
         ...scrollTriggerConfig,
-        trigger: "content-product-summary",
+        trigger: ".content-product-summary>.text-content",
+        start: "center-=40px bottom",
+        toggleActions: "play none none reset",
         scrub: false
       }
     });
@@ -79,14 +86,14 @@ export default class ProductSummary extends Vue {
       .from(
         ".content-product-summary>.text-content>a",
         textAnimConfig,
-        "-=0.5"
+        "-=0.25"
       );
   }
 }
 </script>
 <style lang="scss" scoped>
 section {
-  margin-top: -20px;
+  margin-top: -30px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   -webkit-box-shadow: 0px -4px 50px 0px rgba(0, 0, 0, 0.3);
@@ -95,47 +102,37 @@ section {
 }
 
 .arrow-up {
-  top: -30px;
+  top: -40px;
   left: calc(50% - 13.2px);
   position: absolute;
   color: white;
   transform: scale(1.2);
   animation-name: arrow-pulse;
-  animation-duration: 1.2s;
+  animation-duration: 0.6s;
+  animation-direction: alternate;
   animation-iteration-count: infinite;
 }
 
 .content-product-summary {
-  max-width: 50vw;
-
   .text-content {
+    margin-top: 5px;
+
     h2 {
-      font-size: 3rem;
-      color: #585858;
-      font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 1.3rem;
-      color: #4a4a4a;
-      line-height: 2rem;
-      letter-spacing: 0.5px;
-      margin-top: 0px;
       margin-bottom: 45px;
     }
   }
 }
 
 @keyframes arrow-pulse {
-  0% {
+  from {
     margin-top: 0px;
   }
-  50% {
-    margin-top: -5px;
-  }
-  100% {
-    margin-top: 0px;
+  to {
+    margin-top: 10px;
   }
 }
 
@@ -143,14 +140,12 @@ section {
   section {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    padding-bottom: 0px;
+    padding-top: 80px;
 
     .content-product-summary {
-      max-width: 90vw;
-
       .text-content {
-        h2 {
-          font-size: 2.3rem;
-        }
+        margin-top: 10px;
       }
     }
   }
