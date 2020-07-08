@@ -1,8 +1,9 @@
 <template>
   <div class="textbox-container">
-    <span class="textbox-label">{{ this.label }}</span>
+    <label :for="id" class="textbox-label">{{ this.label }}</label>
     <textarea
       v-if="this.type === 'textarea'"
+      :id="id"
       class="textbox-input"
       :placeholder="this.placeholder"
       :disabled="!this.enabled"
@@ -14,6 +15,7 @@
 
     <input
       v-else
+      :id="id"
       class="textbox-input"
       :type="this.type"
       :placeholder="this.placeholder"
@@ -37,6 +39,10 @@ export default class Textbox extends Vue {
   @Prop({ default: "" }) readonly placeholder!: string;
 
   value = "";
+  // creates a unique ID for the element
+  id = `${this.label.toLowerCase()}-${Math.floor(
+    Math.random() * Math.floor(10000)
+  )}`;
 }
 </script>
 <style lang="scss" scoped>
