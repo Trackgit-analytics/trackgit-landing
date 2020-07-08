@@ -88,7 +88,7 @@ import Navbar from "@/components/navbar/navbar.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import Currencies from "@/models/data/Currencies.ts";
 import Checkout from "@/models/interfaces/Checkout.ts";
-import DonationService from "@/services/Donation.ts";
+import DonationService from "@/services/donation.ts";
 import {
   loadStripe,
   Stripe,
