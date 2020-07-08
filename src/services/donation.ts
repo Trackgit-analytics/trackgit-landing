@@ -16,6 +16,20 @@ export default class DonationService {
     return response?.data;
   }
 
+  /** Retrieve checkout information from a session
+   * @param sessionId The session Id to search for
+   */
+  public static async retrieveCheckout(sessionId: string): Promise<any> {
+    const response = await baseService
+      .get(`/retrieveCheckout?sessionId=${sessionId}`)
+      .catch(error => {
+        console.error(`Error when retrieving checkout session: ${error}`);
+        return null;
+      });
+
+    return response?.data;
+  }
+
   /**
    * Wake the server up, in case it's asleep
    * @returns True if the server is active and ready, false otherwise

@@ -2,7 +2,7 @@
  * All hyperlinks used in the project
  */
 export const Hyperlinks = {
-  home: "./",
+  home: "/",
   getStarted: "https://dashboard.trackgit.com/",
   dashboard: "https://dashboard.trackgit.com/",
   login: "https://dashboard.trackgit.com/",

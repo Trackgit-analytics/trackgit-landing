@@ -57,6 +57,30 @@
       />
     </div>
     <div class="right-section"></div>
+
+    <Modal title="Payment successful" :visible.sync="showReceiptModal">
+      <div class="modal-content">
+        <span class="receipt-id">
+          Receipt:
+          <b>{{ receiptId }}</b>
+        </span>
+        We've received your donation of
+        <span class="received-payment">
+          <h2 class="receipt-amount">
+            {{ receiptAmount }}
+          </h2>
+          <span class="receipt-currency">
+            {{ receiptCurrency }}
+          </span>
+        </span>
+
+        <RectangleButton
+          text="Thank you!"
+          color="purple"
+          v-on:click.native="showReceiptModal = false"
+        />
+      </div>
+    </Modal>
   </section>
 </template>
 <script lang="ts">
@@ -72,8 +96,9 @@ import {
   RedirectToCheckoutOptions
 } from "@stripe/stripe-js";
 import StripeConfig from "@/models/data/Stripe.ts";
+import Modal from "@/components/base-inputs/modal/modal.vue";
 
-@Component({ components: { Navbar, RectangleButton } })
+@Component({ components: { Navbar, RectangleButton, Modal } })
 export default class DonationPage extends Vue {
   @Prop() readonly receipt!: string;
 
@@ -84,10 +109,37 @@ export default class DonationPage extends Vue {
   stripe: Stripe | null = null;
   serverUp = false;
 
+  showReceiptModal = false;
+  receiptCurrency = "";
+  receiptAmount = "";
+  receiptId = "";
+
   mounted() {
     this.initStripe().then(() => {
       this.wakeServer();
     });
+
+    this.checkPaymentSuccess();
+  }
+
+  /** Checks prop to identify successful payment and shows modal */
+  async checkPaymentSuccess() {
+    if (this.receipt != null) {
+      const paymentDetails = await DonationService.retrieveCheckout(
+        this.receipt
+      );
+      if (paymentDetails.display_items == null) {
+        return;
+      }
+
+      const payCurrency = paymentDetails.display_items[0].currency;
+      const payAmount = Number(paymentDetails.display_items[0].amount) / 100;
+      const payId = paymentDetails.id;
+      this.receiptCurrency = `${payCurrency.toUpperCase()}`;
+      this.receiptAmount = `${payAmount}`;
+      this.receiptId = `${payId}`;
+      this.showReceiptModal = true;
+    }
   }
 
   /** Wakes server up, in case it's asleep */
@@ -281,6 +333,41 @@ export default class DonationPage extends Vue {
   }
 }
 
+.modal-content {
+  text-align: center;
+  .receipt-id {
+    font-size: 0.6rem;
+    color: #464646;
+    display: block;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    text-align: left;
+  }
+
+  .received-payment {
+    display: block;
+    margin-top: 10px;
+
+    .receipt-currency {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #464646;
+      margin-right: 5px;
+    }
+
+    .receipt-amount {
+      display: inline-block;
+    }
+  }
+
+  .button {
+    position: absolute;
+    bottom: 4vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #donation {
     .left-section {
@@ -291,6 +378,13 @@ export default class DonationPage extends Vue {
 
     .right-section {
       display: none;
+    }
+  }
+
+  .modal-content {
+    font-size: 1.1rem;
+    .receipt-amount {
+      font-size: 4rem;
     }
   }
 }
