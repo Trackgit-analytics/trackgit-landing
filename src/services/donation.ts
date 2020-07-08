@@ -1,4 +1,4 @@
-import Checkout from "@/models/interfaces/checkout.ts";
+import Checkout from "@/models/interfaces/Checkout.ts";
 import baseService from "@/services/baseService.ts";
 import { RedirectToCheckoutOptions } from "@stripe/stripe-js";
 

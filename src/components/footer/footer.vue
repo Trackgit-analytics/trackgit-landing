@@ -33,7 +33,7 @@ import { Component, Vue } from "vue-property-decorator";
 import Textbox from "@/components/base-inputs/text/textbox.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import NewsletterSignup from "@/components/footer/newsletter-signup.vue";
-import { Emails, Hyperlinks } from "@/models/data/LinkDirectory";
+import { Emails, Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import Logo from "@/components/logo/logo.vue";
 
 @Component({ components: { Textbox, RectangleButton, NewsletterSignup, Logo } })

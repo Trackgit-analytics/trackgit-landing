@@ -1,5 +1,5 @@
-import { API } from "@/models/data/LinkDirectory";
-import Currencies, { defaultCurrency } from "@/models/data/currencies";
+import { API } from "@/models/data/LinkDirectory.ts";
+import Currencies, { defaultCurrency } from "@/models/data/Currencies.ts";
 import axios from "axios";
 
 export default class UserLocaleService {
@@ -20,7 +20,7 @@ export default class UserLocaleService {
     }
 
     const currencyCode = localeData.currency.toLowerCase();
-    const acceptedCodes = Currencies.map(e => e.code);
+    const acceptedCodes = Currencies.map((e: Currency) => e.code);
 
     let localCurrency: Currency;
     if (acceptedCodes.includes(currencyCode)) {

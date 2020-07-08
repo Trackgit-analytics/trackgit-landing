@@ -23,10 +23,10 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Logo from "@/components/logo/logo.vue";
-import { Hyperlinks } from "@/models/data/LinkDirectory";
+import { Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import DeviceHelper from "@/helpers/DeviceHelper";
+import DeviceHelper from "@/helpers/DeviceHelper.ts";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 
 @Component({ components: { Logo, RectangleButton } })

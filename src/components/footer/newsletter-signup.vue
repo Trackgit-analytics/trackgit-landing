@@ -21,8 +21,8 @@
 import { Component, Vue } from "vue-property-decorator";
 import Textbox from "@/components/base-inputs/text/textbox.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
-import FormInput from "@/models/enums/formInput";
-import FormService from "@/services/formSubmit";
+import FormInput from "@/models/enums/formInput.ts";
+import FormService from "@/services/formSubmit.ts";
 import { FormType } from "@/models/data/GetForm.ts";
 
 @Component({ components: { Textbox, RectangleButton } })
