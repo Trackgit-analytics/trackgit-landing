@@ -199,4 +199,20 @@ section {
     }
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  body,
+  html {
+    font-size: 140%;
+  }
+
+  section {
+    padding: 10vh 20vw 80px 20vw;
+
+    .main-text-container {
+      max-width: 35vw;
+      width: 100vw;
+    }
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API } from "@/models/data/LinkDirectory";
+import { API } from "@/models/data/LinkDirectory.ts";
 
 const baseService = axios.create({
   baseURL: API.baseURL,

@@ -227,8 +227,8 @@ export default class FAQ extends Vue {
 }
 
 .bulletin-container {
-  width: calc(300px + 3.3vw);
-  padding: 0px calc(10px + 3.3vw) 0px 10px;
+  width: 420px;
+  padding: 0px 20px 0px 10px;
   flex-shrink: 0;
   scroll-snap-align: start;
   box-sizing: border-box;

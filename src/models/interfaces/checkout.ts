@@ -1,7 +1,7 @@
 /**
  * The interface expected by the server during donation checkou
  */
-export default interface Checkout {
+interface Checkout {
   /** Must be a currency accepted by Stripe */
   currency: string;
   /** Amount to be charged (in dollars, NOT CENTS) */
@@ -15,3 +15,5 @@ export default interface Checkout {
   /** Description displayed on checkout page */
   description?: string;
 }
+
+export default Checkout;

@@ -86,9 +86,8 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import Navbar from "@/components/navbar/navbar.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
-import Currencies from "@/models/data/Currencies";
-import Checkout from "@/models/interfaces/checkout";
-import DonationService from "@/services/donation";
+import Currencies from "@/models/data/Currencies.ts";
+import DonationService from "@/services/donation.ts";
 import {
   loadStripe,
   Stripe,
@@ -96,6 +95,7 @@ import {
 } from "@stripe/stripe-js";
 import StripeConfig from "@/models/data/Stripe.ts";
 import Modal from "@/components/base-inputs/modal/modal.vue";
+import Checkout from "@/models/interfaces/checkout";
 
 @Component({ components: { Navbar, RectangleButton, Modal } })
 export default class DonationPage extends Vue {
@@ -260,8 +260,8 @@ export default class DonationPage extends Vue {
     }
 
     &:before {
-      width: 10px;
-      height: 10px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       content: "";
       background-color: #8267ec;
@@ -269,7 +269,7 @@ export default class DonationPage extends Vue {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%) scale3d(1, 1, 1);
-      transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
       z-index: -1;
     }

@@ -1,3 +1,5 @@
+import Currency from "@/models/interfaces/currency";
+
 /**
  * List of currencies accepted by Stripe
  */

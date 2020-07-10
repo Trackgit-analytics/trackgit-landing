@@ -2,7 +2,7 @@
  * @returns An object containing the meta properties
  */
 function populateMeta(title: string, description: string, image: string) {
-  /* eslint-disable */
+  // eslint-disable-next-line
   const imageURL = require(`@/assets/${image}`);
   const result = {
     title,

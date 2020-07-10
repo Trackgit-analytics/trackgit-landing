@@ -17,7 +17,7 @@
         <a :href="shanzidWebsite">Shanzid Shaiham</a>
       </div>
       <div class="credit">
-        <a :href="`mailto:${tosLink}`">Terms of service</a>
+        <a :href="tosLink">Terms of service</a>
       </div>
 
       <Logo />
@@ -33,7 +33,7 @@ import { Component, Vue } from "vue-property-decorator";
 import Textbox from "@/components/base-inputs/text/textbox.vue";
 import RectangleButton from "@/components/base-inputs/button/button-rectangle.vue";
 import NewsletterSignup from "@/components/footer/newsletter-signup.vue";
-import { Emails, Hyperlinks } from "@/models/data/LinkDirectory";
+import { Emails, Hyperlinks } from "@/models/data/LinkDirectory.ts";
 import Logo from "@/components/logo/logo.vue";
 
 @Component({ components: { Textbox, RectangleButton, NewsletterSignup, Logo } })
@@ -84,10 +84,10 @@ export default class Footer extends Vue {
     .credit {
       line-height: 1.7rem;
       font-size: 1rem;
-      max-width: 200px;
+      max-width: 300px;
 
       span {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 1);
       }
 
       a {

@@ -118,4 +118,11 @@ export default class MessageUsClipart extends Vue {
     transform: rotate(5deg);
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  .mailbox-clipart {
+    padding-left: 100px;
+    width: 100%;
+  }
+}
 </style>

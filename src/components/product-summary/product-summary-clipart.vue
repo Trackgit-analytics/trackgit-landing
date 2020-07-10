@@ -607,4 +607,13 @@ export default class ProductSummaryClipart extends Vue {
     display: none;
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  .graph-clipart {
+    margin-top: 70px !important;
+  }
+  svg {
+    transform: scale(1.5);
+  }
+}
 </style>

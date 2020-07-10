@@ -4,12 +4,24 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="Supercharge your Github respositories with audience traffic analytics. Get insights like number of views, traffic location, visits over time, and more in just a few clicks." />
+  <meta property="og:image" content="/metaImage.png" />
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>Analytics for Github - trackgit</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLL9XXY6RH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-WLL9XXY6RH');
+  </script>
 </head>
 
 <body>
