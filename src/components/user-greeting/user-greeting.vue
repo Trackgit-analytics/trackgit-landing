@@ -118,4 +118,10 @@ section {
     align-self: center;
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  .headline {
+    max-width: 900px;
+  }
+}
 </style>

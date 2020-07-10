@@ -84,7 +84,7 @@ export default class Footer extends Vue {
     .credit {
       line-height: 1.7rem;
       font-size: 1rem;
-      max-width: 200px;
+      max-width: 300px;
 
       span {
         color: rgba(255, 255, 255, 0.7);

@@ -188,4 +188,10 @@ nav {
     }
   }
 }
+
+@media only screen and (min-width: 2000px) {
+  nav {
+    font-size: 1.35rem;
+  }
+}
 </style>

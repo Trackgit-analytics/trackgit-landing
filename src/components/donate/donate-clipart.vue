@@ -1,12 +1,6 @@
 <template>
   <div class="donate-clipart">
-    <svg
-      width="327"
-      height="467"
-      viewBox="0 0 327 467"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 327 467" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M16.6241 328.078C16.6241 328.078 -24.0167 120.692 72.6057 80.6048C169.228 40.5176 136.617 -4.85549 192.408 0.420447C248.199 5.69638 279.781 76.4921 288.203 142.39C296.625 208.287 329.079 363.365 275.134 381.053C210.124 402.368 201.295 469.027 145 465.9C35.8722 459.888 16.6241 328.078 16.6241 328.078Z"
         fill="#F8F8FF"
@@ -217,9 +211,11 @@ export default class DonateClipart extends Vue {}
   .donate-clipart {
     grid-row-start: 1;
     padding-left: 0px;
+    width: 100%;
 
     svg {
       height: 40vh;
+      width: 100%;
     }
   }
 }
@@ -231,6 +227,13 @@ export default class DonateClipart extends Vue {}
     svg {
       max-width: 30vw;
     }
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .donate-clipart > svg {
+    max-height: unset;
+    width: 15vw;
   }
 }
 </style>

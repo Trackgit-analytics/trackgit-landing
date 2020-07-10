@@ -98,4 +98,10 @@ input:-webkit-autofill:focus {
   background-color: #ffffff !important;
   box-shadow: 0 0 0 1000px white inset !important;
 }
+
+@media only screen and (min-width: 2000px) {
+  .textbox-container {
+    max-width: 800px;
+  }
+}
 </style>
