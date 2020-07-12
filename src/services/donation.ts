@@ -21,7 +21,7 @@ export default class DonationService {
    */
   public static async retrieveCheckout(sessionId: string): Promise<any> {
     const response = await baseService
-      .get(`/retrieveCheckout?sessionId=${sessionId}`)
+      .get(`/checkout/retrieve?sessionId=${sessionId}`)
       .catch(error => {
         console.error(`Error when retrieving checkout session: ${error}`);
         return null;
@@ -52,7 +52,7 @@ export default class DonationService {
    * @param data The data to send in the post request
    */
   private static async callDonationAPI(data: any): Promise<any> {
-    return baseService.post("/createCheckout", data).catch(error => {
+    return baseService.post("/checkout/create", data).catch(error => {
       console.error(`Error when calling checkout session: ${error}`);
       return null;
     });

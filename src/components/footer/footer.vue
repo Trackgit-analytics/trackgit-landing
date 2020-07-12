@@ -17,7 +17,7 @@
         <a :href="shanzidWebsite">Shanzid Shaiham</a>
       </div>
       <div class="credit">
-        <a :href="`mailto:${tosLink}`">Terms of service</a>
+        <a :href="tosLink">Terms of service</a>
       </div>
 
       <Logo />
@@ -87,7 +87,7 @@ export default class Footer extends Vue {
       max-width: 300px;
 
       span {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 1);
       }
 
       a {
