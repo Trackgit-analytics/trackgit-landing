@@ -55,13 +55,19 @@ const PageMeta = {
   /** meta tags for App.vue */
   App: populateMeta(
     "Analytics for Github - trackgit",
-    "Supercharge your Github respositories with audience traffic analytics. Get insights like number of views, traffic location, visits over time, and more in just a few clicks.",
+    "Supercharge your Github respositories with audience traffic analytics. Get insights like number of views, visits over time, and more in just a few clicks. And it's all free!",
     "metaImage.png"
   ),
   /** meta tags for Donate.vue */
   Donate: populateMeta(
     "Make a donation",
     "Your donations help us make your experience on our platform even better!",
+    "metaImage.png"
+  ),
+  /** meta tags for Terms.vue */
+  Terms: populateMeta(
+    "Terms and conditions",
+    "Terms and conditions users must accept to use our platform and products",
     "metaImage.png"
   ),
   /** meta tags for 404.vue */

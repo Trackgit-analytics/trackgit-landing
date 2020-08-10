@@ -3,13 +3,13 @@
  */
 export const Hyperlinks = {
   home: "/",
-  getStarted: "https://dashboard.trackgit.com/",
+  getStarted: "https://dashboard.trackgit.com/register",
   dashboard: "https://dashboard.trackgit.com/",
-  login: "https://dashboard.trackgit.com/",
-  signup: "https://dashboard.trackgit.com/",
+  login: "https://dashboard.trackgit.com/login",
+  signup: "https://dashboard.trackgit.com/register",
   contactUs: "./#message-us",
   createToken: "https://dashboard.trackgit.com/",
-  tos: "https://trackgit.com/terms",
+  tos: "/tos",
   donate: "./donate",
   shanzid: "https://shanzid.com"
 };

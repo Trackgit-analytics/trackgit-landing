@@ -3,19 +3,17 @@
     <NewsletterSignup />
     <div class="credits-container">
       <div class="credit">
-        <span>Support</span><br />
-        <a :href="`mailto:${supportEmail}`">{{ this.supportEmail }}</a>
+        <a :href="`mailto:${supportEmail}`">Contact support</a>
       </div>
 
       <div class="credit">
-        <span>Join us</span><br />
-        <a :href="`mailto:${joinusEmail}`">{{ this.joinusEmail }}</a>
+        <a :href="`mailto:${joinusEmail}`">Join us</a>
       </div>
 
       <div class="credit">
-        <span>Created by</span><br />
-        <a :href="shanzidWebsite">Shanzid Shaiham</a>
+        <a :href="donateLink">Donate</a>
       </div>
+
       <div class="credit">
         <a :href="tosLink">Terms of service</a>
       </div>
@@ -23,7 +21,10 @@
       <Logo />
     </div>
     <div class="copyright-container">
-      <span>{{ copyrightStatement }}</span>
+      <span>
+        {{ copyrightStatement }} <br />
+        Owned and operated by <a :href="shanzidWebsite">Shanzid Shaiham</a>
+      </span>
     </div>
   </section>
 </template>
@@ -58,6 +59,11 @@ export default class Footer extends Vue {
     return Hyperlinks.tos;
   }
 
+  /** Get the link to donate page */
+  get donateLink(): string {
+    return Hyperlinks.donate;
+  }
+
   /** Get the copyright notice */
   get copyrightStatement(): string {
     const date = new Date();
@@ -77,17 +83,21 @@ export default class Footer extends Vue {
 
   .credits-container {
     background-color: #3e3e3e;
-    padding: 5vh 8vw;
+    padding: 5vh 8vw 0vh 8vw;
     box-sizing: border-box;
     display: flex;
+    column-gap: 3vw;
 
     .credit {
       line-height: 1.7rem;
       font-size: 1rem;
       max-width: 300px;
+      flex-grow: 0;
+      width: unset;
 
       span {
         color: rgba(255, 255, 255, 1);
+        opacity: 0.8;
       }
 
       a {
@@ -109,12 +119,13 @@ export default class Footer extends Vue {
 
   .copyright-container {
     background-color: #3e3e3e;
-    padding: 10px 8vw 20px 8vw;
+    padding: 0px 8vw 20px 8vw;
     margin-top: -2px;
     color: rgb(138, 138, 138);
     font-size: 1rem;
     text-align: center;
     box-sizing: border-box;
+    line-height: 1.7rem;
   }
 }
 

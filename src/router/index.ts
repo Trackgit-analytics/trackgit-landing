@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Landing from "@/views/Landing.vue";
 import PageMeta from "@/models/data/PageMeta.ts";
+import { Hyperlinks } from "@/models/data/LinkDirectory";
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,12 @@ const routes: Array<RouteConfig> = [
     name: "donate",
     meta: PageMeta.Donate,
     component: () => import("@/views/Donate.vue")
+  },
+  {
+    path: Hyperlinks.tos,
+    name: "Terms and conditions",
+    meta: PageMeta.Terms,
+    component: () => import("@/views/Terms.vue")
   },
   {
     path: "/*",
