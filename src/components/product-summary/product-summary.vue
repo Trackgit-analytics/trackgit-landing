@@ -1,6 +1,6 @@
 <template>
   <section id="product-summary">
-    <span class="gg-push-chevron-up arrow-up" />
+    <a href="#product-summary" class="gg-push-chevron-up arrow-up" />
     <div class="content-product-summary main-text-container">
       <div class="text-content">
         <h2>
@@ -123,6 +123,10 @@ section {
 
     p {
       margin-bottom: 45px;
+    }
+
+    .button {
+      font-size: 1.4rem;
     }
   }
 }

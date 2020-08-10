@@ -55,7 +55,7 @@ export default class FAQ extends Vue {
     {
       header: "Audience insights",
       content:
-        "Get key insights about your repositories like number of views, traffic location, visits over time, and more.",
+        "Get key insights about your repositories like number views over time, a GitHub badge for your view counts, and more.",
       icon: "chart.svg"
     },
     {
@@ -72,13 +72,13 @@ export default class FAQ extends Vue {
     {
       header: "Universal support",
       content:
-        "It doesn’t matter whether your project is in Node or Ruby, trackgit works with all online repositories.",
+        "It doesn’t matter whether your project is in Node or Ruby, trackgit works with all GitHub repositories.",
       icon: "universal.svg"
     },
     {
       header: "Easy installation",
       content:
-        "Just add one line of code in the Readme.md of your repository and we’ll take care of the rest.",
+        "Just add a few lines of code in the Readme.md of your repository and we’ll take care of the rest.",
       icon: "plane.svg"
     },
     {
