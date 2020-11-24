@@ -5,7 +5,9 @@
   Landing page
 </h2>
 <p>
-  <a href="https://trackgit.com"><img src="https://sfy.cx/u/xdq" alt="trackgit-views" /></a>
+  <a href="https://trackgit.com"><a href="https://trackgit.com">
+<img src="https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/kgpf69vmbz50c14omlkg" alt="trackgit-views" />
+</a></a>
   <span style="margin-right:auto; width:100%">
     <a href="https://vuejs.org/"><img title="VueJS" src="https://shanzid.com/images/tools/vuejs.png" height="20" /></a>
     <a href="https://www.typescriptlang.org/"><img title="TypeScript" src="https://shanzid.com/images/tools/typescript.png" height="20" /></a>
